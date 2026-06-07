@@ -1,8 +1,9 @@
 # 🧬 Transcriptomicsanalyse van Reumatoïde Artritis (RA)
 
-## 📌 Projectoverzicht
+## <img width="625" height="625" alt="image" src="https://github.com/user-attachments/assets/ee56e535-eb47-4598-b042-ed42fb8944ed" />
+ Projectoverzicht
 
-In dit project is een **transcriptomicsanalyse van Reumatoïde Artritis (RA)** uitgevoerd en vergeleken met gezonde controles. Met behulp van RNA-seq data is onderzocht welke genen verschillend tot expressie komen tussen gezonde en RA-monsters.
+In dit project is een transcriptomicsanalyse van Reumatoïde Artritis (RA) uitgevoerd en vergeleken met gezonde controles. Met behulp van RNA-seq data is onderzocht welke genen verschillend tot expressie komen tussen gezonde en RA-monsters.
 
 De analyse omvat:
 
