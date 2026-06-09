@@ -174,10 +174,6 @@ Bij dit project is gebruikgemaakt van **kunstmatige intelligentie (AI)** ter ond
 1. Smolen JS, et al. *Rheumatoid arthritis.* The Lancet. 2016.
 2. Firestein GS, McInnes IB. *Immunopathogenesis of Rheumatoid Arthritis.* Immunity. 2017.
 
----
-
-# 👩‍🔬 Auteur
-
 **Geeske de Boer**
 NHL Stenden Hogeschool
 Biomedisch Laboratoriumonderzoek (BLO)
