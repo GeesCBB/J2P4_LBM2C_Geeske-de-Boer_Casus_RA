@@ -1,8 +1,18 @@
-# 🧬 Transcriptomicsanalyse van Reumatoïde Artritis (RA)
+# Transcriptomicsanalyse van Reumatoïde Artritis (RA)
+
+Reumatoïde (RA) is een chronische, systematische auto-immuunziekte die voornamelijk gewrichten en omliggend weefsel aantast. RA bedraagt ​​ongeveer 1% in de volwassen bevolking. Vrouwen worden vaker getroffen dan mannen, met een verhouding van 2,45. Patiënten wie leven met RA ervaren een aanzienlijke negatieve impact op hun kwaliteit van leven. Zonder behandeling kan de systemische ontsteking zich via de bloedbaan door het lichaam verspreiden. Dit leidt bij RA tot onomkeerbare gewrichtsschade, de ontwikkeling van extra-articulaire manifestaties, invaliditeit en een verhoogd mortaliteitsrisico (Sahin et al., 2025).
+
+In dit project is een transcriptomicsanalyse van Reumatoïde Artritis (RA) uitgevoerd met behulp van RNA-seq data. Het doel van deze analyse is om verschillen in genexpressie tussen gezonde controlemonsters en RA-monsters te onderzoeken. De data is verkregen 
+
+Sahin, D., Di Matteo, A., & Emery, P. (2025). Biomarkers in the diagnosis, prognosis and management of rheumatoid arthritis: A comprehensive review. Annals of clinical biochemistry, 62(1), 3–21. https://doi.org/10.1177/00045632241285843
+
+Platzer, A., Nussbaumer, T., Karonitsch, T., Smolen, J. S., & Aletaha, D. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. PloS one, 14(7), e0219698. https://doi.org/10.1371/journal.pone.0219698
+
+Jang S, Kwon EJ, Lee JJ. Rheumatoid Arthritis: Pathogenic Roles of Diverse Immune Cells. Int J Mol Sci. 2022 Jan 14;23(2):905. doi: 10.3390/ijms23020905. PMID: 35055087; PMCID: PMC8780115.
 
 <img width="300" alt="RA afbeelding" src="https://github.com/user-attachments/assets/ee56e535-eb47-4598-b042-ed42fb8944ed" />
 
-Welkom in deze GitHub repository! In dit project is een **transcriptomicsanalyse van Reumatoïde Artritis (RA)** uitgevoerd met behulp van RNA-seq data. Het doel van deze analyse is om verschillen in genexpressie tussen **gezonde controlemonsters** en **RA-monsters** te onderzoeken.
+
 
 Deze repository is opgezet om de workflow van een bio-informatica analyse **transparant, reproduceerbaar en overzichtelijk** weer te geven.
 
