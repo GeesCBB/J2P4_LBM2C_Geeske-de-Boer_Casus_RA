@@ -1,7 +1,8 @@
 # Transcriptomicsanalyse van Reumatoïde Artritis (RA)
-
+Inleiding
 Reumatoïde (RA) is een chronische, systematische auto-immuunziekte die voornamelijk gewrichten en omliggend weefsel aantast. In 2019 leefde er wereldbreed 18 miljoen mensen met RA, dit bedraagt ​​ongeveer 1% in de volwassene bevolking. Vrouwen worden vaker getroffen dan mannen, ongveer 70% meer waarvan 55% ouder als 55 is. Patiënten wie leven met RA ervaren een aanzienlijke negatieve impact op hun kwaliteit van leven. Zonder behandeling kan de systemische ontsteking zich via de bloedbaan door het lichaam verspreiden. Dit leidt bij RA tot onomkeerbare gewrichtsschade, de ontwikkeling van extra-articulaire manifestaties, invaliditeit en een verhoogd mortaliteitsrisico (Sahin et al., 2025; World Health Organization, 2023).
 
+Doelstelling
 In dit project is een transcriptomicsanalyse van Reumatoïde Artritis (RA) uitgevoerd met behulp van RNA-seq data. Het doel van deze analyse is om verschillen in genexpressie tussen gezonde controlemonsters en RA-monsters te onderzoeken. De data is verkregen 
 
 
@@ -28,48 +29,8 @@ Deze repository is opgezet om de workflow van een bio-informatica analyse **tran
 
 ---
 
-# 📂 Structuur van de repository
 
-```text
-.
-├── README.md
-├── scripts/
-│   └── J2P4_LBM2C_Geeske_de_Boer_Casus_RA.R
-│
-├── data/
-│   ├── count_matrix_RA.txt
-│   └── CasusRA_countmatrix.csv
-│
-├── results/
-│   ├── ResultatenCasusRA.csv
-│   ├── GO_Enrichment_RA.csv
-│   ├── VolcanoplotRA.png
-│   ├── GO_plot.png
-│   ├── KEGG_plot.png
-│   └── hsa05323.pathview.png
-│
-├── bronnen/
-│   └── gebruikte_literatuur.txt
-```
-
----
-
-# 🔬 Inleiding
-
-Reumatoïde Artritis (RA) is een chronische auto-immuunziekte waarbij ontstekingsreacties leiden tot schade aan gewrichten en omliggende weefsels. Door veranderingen in genexpressie te analyseren kan beter inzicht verkregen worden in biologische processen en pathways die betrokken zijn bij het ontstaan en de progressie van de ziekte.
-
-In dit project wordt transcriptomics toegepast om verschillen in genexpressie tussen gezonde controlemonsters en RA-monsters te onderzoeken. Daarnaast wordt gekeken welke biologische processen en pathways mogelijk betrokken zijn bij ziekteontwikkeling.
-
-### Onderzoeksvraag
-
-**Welke genen en biologische pathways verschillen in expressie tussen gezonde controlemonsters en patiënten met Reumatoïde Artritis?**
-
-**[VOEG TOE]**
-Onderbouw deze introductie met minimaal **2 wetenschappelijke bronnen**.
-
----
-
-# ⚙️ Methoden
+# ⚙️ Methode: +- 200 woorden met methode, flowschema. Zie leerdoelen voor minimale inhoud. Scripts, data etc. kunnen in een aparte folder met verwijzing
 
 De analyse werd uitgevoerd in **RStudio** met behulp van packages uit **Bioconductor**.
 
@@ -99,7 +60,7 @@ Met behulp van `KEGG` en `pathview` werden relevante ziektepathways gevisualisee
 
 ---
 
-# 📊 Resultaten
+# 📊 Resultaten: +- 200 woorden, inclusief correcte verwijzingen.
 
 ## Volcano plot
 
@@ -158,17 +119,7 @@ Beschrijf kort:
 
 ---
 
-# 💭 Discussie
-
-Deze analyse geeft inzicht in verschillen in genexpressie tussen gezonde controlemonsters en RA-monsters. Toch zijn er enkele beperkingen waarmee rekening gehouden moet worden.
-
-Een beperking van deze analyse is de relatief kleine dataset (**n = 4 per groep**), waardoor statistische kracht beperkt kan zijn. Daarnaast is gewerkt met een **gefilterde count matrix** om rekentijd te verkorten, wat invloed kan hebben op de hoeveelheid geanalyseerde genen.
-
-Verder zijn de resultaten afhankelijk van gekozen filters, zoals de significatiedrempel en fold-change cutoff. Toekomstig onderzoek met grotere datasets kan aanvullende inzichten geven in relevante pathways en biomarkers voor RA.
-
----
-
-# 🧾 Conclusie
+# 🧾 Conclusie: +- 200 woorden, inclusief aanbevelingen en onderzoek in context plaatsen
 
 **[VOEG TOE – ongeveer 5–8 zinnen]**
 
@@ -196,5 +147,6 @@ Bij dit project is gebruikgemaakt van **kunstmatige intelligentie (AI)** ter ond
 
 **Geeske de Boer**
 NHL Stenden Hogeschool
-Biomedisch Laboratoriumonderzoek (BLO)
-J2P4 – Innovatieve Diagnostiek
+Biologie en Medisch Laboratoriumonderzoek
+25-26 J2P4 – Innovatieve Diagnostiek
+Transcriptomics
