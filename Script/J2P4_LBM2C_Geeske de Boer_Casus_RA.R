@@ -56,8 +56,8 @@ col_down    <- "hotpink"
 # Statistische categorieën
 stat_colors <- c(
   "grey30",  # niet significant
-  "hotpink", # log2FC alleen
-  "plum3",   # p-value alleen
+  "hotpink", # log2FC
+  "plum3",   # p-value
   "purple"   # beide
 )
 
@@ -195,7 +195,7 @@ ggsave("PCA_RA_Resultaat.png",
        units = "in", 
        dpi = 300)
 
-# 5.0 ===================================== Visualisatie ========================================================================================================
+# 5.0 ===================================== Volcano plot ========================================================================================================
 # 5.1 Selectie van genen ----
 top_up <- rownames(head(hoogste_fold_change, 5))   # Top 5 hoogste fold change
 top_down <- rownames(head(laagste_fold_change, 5)) # Top 5 laagste fold change
@@ -224,12 +224,16 @@ EnhancedVolcano(
   lab = rownames(resultaten),
   x = "log2FoldChange",
   y = "padj",
+  title = 'Significante genexpressie-verschillen in RA patiënten', 
+  subtitle = 'RA vs Gezonde controles',
   
   col = stat_colors,
   
   FCcutoff = 1,
   pCutoff = 0.05,
   
+  max.overlaps = Inf,
+  labSize = 3,
   selectLab = genen_van_interesse,
   drawConnectors = TRUE,
   boxedLabels = TRUE,
