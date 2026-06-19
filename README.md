@@ -1,6 +1,6 @@
 # Transcriptomicsanalyse van Reumatoïde Artritis (RA) (beschrijvend makend, met conclusie)
 
-# Introdcutie (diepgang welke pathways zijn al bekend, hoe gaan wij de pathways bekijken geneology dinges, who mag voor data)
+# Introdcutie
 
 Reumatoïde (RA) is een chronische, systematische auto-immuunziekte die voornamelijk gewrichten en omliggend weefsel aantast. In 2019 leefde er wereldbreed 18 miljoen mensen met RA, dit bedraagt ​​ongeveer 1% in de volwassene bevolking. Vrouwen worden vaker getroffen dan mannen, ongveer 70% meer waarvan 55% ouder als 55 is. Patiënten wie leven met RA ervaren een aanzienlijke negatieve impact op hun kwaliteit van leven. Zonder behandeling kan de systemische ontsteking zich via de bloedbaan door het lichaam verspreiden. Dit leidt bij RA tot onomkeerbare gewrichtsschade, de ontwikkeling van extra-articulaire manifestaties, invaliditeit en een verhoogd mortaliteitsrisico (Sahin et al., 2025; World Health Organization, 2023).
 
@@ -11,7 +11,7 @@ Om meer inzicht te krijgen in de onderliggende mechanismen van deze ziekte, is i
 # Methoden
 
 ## Dataset en monsters
-De in dit project gebruikte RNA-seq data zijn afkomstig uit de studie van Platzer et al. (2019), waarin genexpressie in synoviumweefsel van patiënten met reumatoïde artritis (RA) en gezonde controles werd onderzocht. De ruwe sequencingdata werden verkregen via de NCBI Sequence Read Archive (SRA) en bestaan uit acht samples met accessionnummers `SRR4785819`, `SRR4785820`, `SRR4785828`, `SRR4785831`, `SRR4785979`, `SRR4785980`, `SRR4785986` en `SRR4785988` (zie Tabel 1).
+De in dit project gebruikte RNA-seq data zijn afkomstig uit de studie van Platzer et al. (2019), beschikbaar via de NCBI Sequence Read Archive (SRA), bestaande uit acht synoviumbiopten van reumatoïde artritis (RA) patiënten en gezonde controles (SRR4785819–SRR4785988; tabel 1). De ruwe data (FASTQ) zijn oorspronkelijk gegenereerd na RNA-extractie uit synoviumweefsel, gevolgd door library preparation met TruSeq Stranded Total RNA RiboZero (Illumina) en sequencing op een Illumina HiSeq 2000 (paired-end 100 bp). 
 
 **Tabel 1.** *Overzicht van de gebruikte RNA-seq monsters uit de studie van Platzer et al. (2019).*
 
@@ -26,27 +26,19 @@ De in dit project gebruikte RNA-seq data zijn afkomstig uit de studie van Platze
 | SRR4785986 | 60 | Vrouw | Reumatoïde artritis (vastgesteld) |
 | SRR4785988 | 59 | Vrouw | Reumatoïde artritis (vastgesteld) |
 
-## Referentiegenoom en mapping
-Alle bio-informatische analyses werden opeenvolgend uitgevoerd in de programmeeromgeving R volgens de opgezette workflow (**Figuur 1**). Reads werden gemapt tegen het humane referentiegenoom GRCh38.p14 (RefSeq assembly GCF_000001405.40; Genome Reference Consortium, NCBI, 2026). 
+## Gen-mapping en kwantificatie
+Alle analyses volgden de workflow in R (**Figuur 1**). Reads werden gemapt tegen het humane referentiegenoom GRCh38.p14 (NCBI, 2026). Hiervoor werd een genoomindex gebouwd met `buildindex()` en uitgelijnd met `align()` via `Rsubread` (v2.22.1). Na sortering met `Rsamtools` (v2.24.0) telde `featureCounts()` de reads per gen tot een countmatrix.
 
-Eerst werd een genome index opgebouwd met `buildindex()` uit het package `Rsubread` (v2.22.1), waarna de reads werden uitgelijnd met `align()`. De resulterende BAM-bestanden werden gesorteerd en geïndexeerd met `Rsamtools` (v2.24.0). Vervolgens werden de reads per gen gekwantificeerd met `featureCounts()` tot een countmatrix.
+## Differentiële expressieanalye sen visualisatie
+Expressieverschillen tussen RA en controle werden berekend met `DESeq2` (v1.48.1). Genen waren significant bij een adjusted p-waarde < 0,05 en |log2FoldChange| > 1. Dit filter garandeert statistische en biologische relevantie. De data werden gevisualiseerd in een PCA-plot (`ggplot2` v4.0.2) en volcano plot (`EnhancedVolcano` v1.26.0) (**Figuur 1**).
 
-## Differentiële expressieanalyse
-Differentiële genexpressie tussen RA en controles werd bepaald met `DESeq2` (v1.48.1) volgens de methode van Love et al. (2014). Genen werden als significant beschouwd bij een adjusted p-waarde (Benjamini-Hochberg correctie) < 0.05 en een absolute |log2FoldChange| > 1. Deze drempel werd gekozen zodat alleen genen werden geselecteerd waarvan het expressieverschil zowel statistisch significant als biologisch relevant is.
-
-De resultaten werden gevisualiseerd met een PCA-plot en een volcano plot, waarbij gebruik werd gemaakt van `EnhancedVolcano` (v1.26.0) (**Figuur 1**). Voor de volcano plot werden zowel de meest significant veranderde genen als eerder beschreven RA-gerelateerde genen geselecteerd.
 
 <img width="2286" height="3851" alt="image" src="https://github.com/user-attachments/assets/05dc722c-f9a8-45c7-9ee2-1a1263f31fbb" />
 
 ***Figuur 1. Workflow voor de RNA-seq data-analyse bij reumatoïde artritis (RA). Deze afbeelding toont de stappen van ruwe data naar de resultaten.*** *In het midden staan de processtappen (rechthoeken). De workflow begint met het voorbereiden van de data. Daarna worden de reads gemapt op het referentiegenoom en geteld tot een countmatrix (bovenste blokken). Vervolgens wordt de metadata toegevoegd en start de differentiële expressieanalyse met DESeq2 (middelste blokken). De resultaten worden daarna gevisualiseerd met een PCA-plot en volcano plot (linksonder). Tot slot worden de belangrijkste genen functioneel geïnterpreteerd met een GO-enrichment en een KEGG pathway-analyse (rechtsonder). De invoerbestanden staan links en de gemaakte tussenbestanden staan rechts (parallellogrammen). Het eindresultaat bestaat uit de grafieken en pathway-visualisaties onderaan.*
 
-## Functionele analyse
-Functionele interpretatie van de differentieel tot expressie komende genen werd uitgevoerd met Gene Ontology (GO)-enrichmentanalyse via `goseq` (v1.60.0) en `clusterProfiler` (v4.16.0) (**Figuur 1**). De resultaten werden weergegeven in barplots en dotplots met `ggplot2` (v4.0.2). 
-
-Daarnaast werd een KEGG-pathwayanalyse uitgevoerd met pathview (v1.48.0), waarbij specifiek is gekozen voor pathway hsa05323 (Rheumatoid arthritis). Deze pathway is geselecteerd omdat deze direct de ontstekings- en immuunprocessen beschrijft die kenmerkend zijn voor RA en daardoor biologisch relevant is voor deze studie (Yu et al., 2022).
-
-## Software
-De belangrijkste R-packages zijn expliciet vermeld in de Methods-sectie. Overige geïnstalleerde packages, inclusief dependencies en systeeminformatie, zijn beschikbaar via `sessionInfo()` in de bijlage.
+## Functionele interpretatie en software
+De biologische betekenis werd bepaald met GO-enrichment via `goseq` (v1.60.0) en `clusterProfiler` (v4.16.0) (**Figuur 1**). Daarnaast toonde `pathview` (v1.48.0) de genexpressie in de relevante KEGG-pathway hsa05323 (Rheumatoid arthritis). Alle overige softwaregegevens staan in `sessionInfo()` in de bijlage voor de reproduceerbaarheid.
 
 ---
 
