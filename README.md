@@ -1,4 +1,4 @@
-# Transcriptomicsanalyse van Reumatoïde Artritis (RA) (beschrijvend makend, met conclusie)
+# Transcriptomicsanalyse toont sterke immuunactivatie en ontstekingssignatuur in reumatoïde artritis
 
 # Introductie
 
@@ -46,7 +46,8 @@ De biologische betekenis werd bepaald met GO-enrichment via `goseq` (v1.60.0) en
 
 ## PCA en volcano plot: duidelijke scheiding en brede genexpressieverschillen tussen RA en controles
 
-Het doel van deze analyses was om de specifieke verschillen in genexpressie tussen RA-patiënten en gezonde controles in kaart te brengen.De Principal Component Analysis (PCA) toont een zeer duidelijke scheiding tussen de twee groepen langs de eerste hoofdcomponent (Figuur 2A). De gezonde monsters clusteren compact links en de RA-monsters rechts. Dit bewijst dat de ziektetoestand de belangrijkste oorzaak is van de variatie in genexpressie.De volcano plot laat vervolgens zien dat dit expressieverschil op grote schaal duidelijk aanwezig is (Figuur 2B). Een grote hoeveelheid genen (paarse punten) overschrijdt de drempelwaarden voor significantie en fold change. Punten aan de rechterkant van de nullijn duiden op genen die sterk verhoogd tot expressie komen (upregulated) bij RA-patiënten, zoals IGHV3-53 en STAT4. Punten aan de linkerkant geven genen aan die juist sterk verlaagd aanwezig zijn (downregulated), zoals ANKRD30BL en MT-ND6. 
+Het doel van deze analyses was het bepalen van verschillen in genexpressie tussen RA-patiënten en gezonde controles. De PCA laat een duidelijke scheiding zien tussen beide groepen, waarbij RA en controles apart clusteren (Figuur 2A). Dit geeft aan dat de ziektetoestand de belangrijkste bron van variatie is in de data.
+De volcano plot laat zien dat veel genen significant differentieel tot expressie komen (Figuur 2B). Genen aan de rechterzijde zijn verhoogd in RA, terwijl genen aan de linkerzijde verlaagd zijn. Voorbeelden zijn STAT4 (upregulated) en MT-ND6 (downregulated).
 
 <img width="1198" height="626" alt="image" src="https://github.com/user-attachments/assets/e2fae861-bf74-4260-9961-99c172743a9c" />
 
@@ -57,11 +58,7 @@ Het doel van deze analyses was om de specifieke verschillen in genexpressie tuss
 ---
 
 ## GO-enrichmentanalyse: oververtegenwoordigde immuun- en signaalprocessen in RA
-GO-enrichmentanalyse werd uitgevoerd om te bepalen welke biologische processen vaker voorkomen in genen die verschillen tussen RA-patiënten en gezonde controles.
-
-De analyse laat zien dat vooral immuunprocessen oververtegenwoordigd zijn in RA (Figuur 3C–D). Dit omvat onder andere immune system process en leukocyte activation. Daarnaast komen processen voor signaaltransductie en celcommunicatie vaker voor in genen die verschillen tussen RA en controles.
-
-De dot plot bevestigt deze resultaten en laat zien dat deze processen zowel een hoge significantie als een hoge gene ratio hebben. Dit betekent dat veel genen binnen deze processen verschillen in expressie tussen RA en controles (Figuur 3D).
+GO-analyse laat zien dat immuunprocessen sterk oververtegenwoordigd zijn in RA ten opzichte van controles (Figuur 3C–D), waaronder immune system process en leukocyte activation. Daarnaast komen signaaltransductie en celcommunicatie vaker voor in de RA-genen. De dot plot bevestigt dit en laat zien dat deze processen zowel een hoge significantie als gene ratio hebben.
 
 <img width="1196" height="624" alt="image" src="https://github.com/user-attachments/assets/eddbd4c7-a3d7-4e07-8482-314254e7f488" />
 
@@ -71,17 +68,34 @@ De dot plot bevestigt deze resultaten en laat zien dat deze processen zowel een 
 
 ---
 
-## KEGG Rheumatoid Arthritis pathway (hsa05323)
+# KEGG pathway enrichment: verrijkte immuun- en signaalroutes in RA
+KEGG-analyse toont meerdere verrijkte pathways in de opgereguleerde genen tussen RA-patiënten en controles (Figuur 4). Dit betreft vooral immuun- en signaalgerelateerde routes die significant oververtegenwoordigd zijn in de dataset.
+
+<img width="3000" height="2400" alt="image" src="https://github.com/user-attachments/assets/c8141e9c-ceaf-4100-9830-a8071e4ea22e" />
+
+***Figuur 4. KEGG pathway enrichment analyse van opgereguleerde differentieel tot expressie komende genen (DEGs) tussen de RA-groep en de controlegroep.*** *De x-as geeft de Gene Ratio weer (het aandeel DEGs binnen een pathway), de grootte van de cirkels correspondeert met het aantal genen (Count) en de kleur geeft de aangepaste p-waarde (padj) weer.*
 
 ---
 
-# Conclusie: +- 200 woorden, inclusief aanbevelingen en onderzoek in context plaatsen (andere genen nog erbij in verwerken). dit kan bondig als resultaten goed beschreven zijn, wat beketkent de conclusie wat zegt het grotebeeld of ziektebeeld
+# Pathview analyse: verstoring van de Rheumatoid arthritis pathway
+De Pathview-analyse van de KEGG rheumatoid arthritis pathway laat zien dat meerdere ontstekingsgerelateerde genen verhoogd tot expressie komen in RA ten opzichte van controles (Figuur 5). Dit wijst op verstoring van immuun- en ontstekingsprocessen binnen deze pathway.
 
-Dit onderzoek bevestigt dat Reumatoïde Artritis gepaard gaat met een grootschalige herprogrammering van het transcriptoom in het synovium. De belangrijkste bevinding is de sterke activering van het adaptieve immuunsysteem, wat overeenkomt met de aanwezigheid van ACPA-autoantistoffen in de RA-monsters (pp. 1, 12). De resultaten, specifiek de verhoogde expressie van STAT4 en ontstekingscytokines in de KEGG-pathway, sluiten aan bij de literatuur die de rol van chronische synovitis bij gewrichtsschade beschrijft (Radu & Bungau, 2021).
+<img width="1492" height="859" alt="image" src="https://github.com/user-attachments/assets/506d6725-5945-43a3-a867-beffca704d70" />
 
-De biologische betekenis van de gevonden genen zoals IL-6 en MMP's onderstreept het destructieve karakter van de ziekte op het gewrichtsslijmvlies en botweefsel (p. 7). Hoewel de immuunrespons dominant is, suggereren de GO-termen uit Figuur 5 ook betrokkenheid van neurologische signaalroutes, wat mogelijk gerelateerd is aan pijnreceptie in ontstoken gewrichten.
-Aanbevelingen: Toekomstig onderzoek zou zich kunnen richten op de vroege stadia van RA (diagnose <12 maanden) om te bepalen of deze genexpressieprofielen bruikbaar zijn als vroege diagnostische biomarkers (p. 1). Daarnaast is validatie van de gevonden genen via qPCR in een groter cohort aanbevolen om de robuustheid van deze resultaten te verifiëren.
 
+***Figuur 5. Pathview-visualisatie van de KEGG Rheumatoid arthritis-pathway voor de vergelijking tussen de RA-groep en de controlegroep.*** *De kleur van de genen geeft de relatieve genexpressie weer: paars duidt op een hogere expressie en roze op een lagere expressie in de RA-groep ten opzichte van de controlegroep. Witte vakken geven genen weer waarvoor geen differentiële expressie is gedetecteerd.*
+
+---
+
+# Conclusie
+
+In dit onderzoek zijn verschillen in genexpressie tussen patiënten met reumatoïde artritis (RA) en gezonde controles geanalyseerd met RNA-seq data uit Platzer et al. (2019). De resultaten laten een duidelijke scheiding zien tussen beide groepen en tonen dat RA sterk wordt gekenmerkt door grootschalige veranderingen in genexpressie.
+
+GO- en pathway-analyses laten zien dat vooral immuun- en ontstekingsprocessen sterk oververtegenwoordigd zijn in RA. Hierbij spelen processen zoals leukocyte activation, cytokine signaling en signaaltransductie een centrale rol. Ook KEGG- en Pathview-analyses bevestigen dat de rheumatoid arthritis pathway verstoord is, met veranderde expressie van genen zoals IL6, TNF, CCL2 en MMP13. Dit wijst op actieve immuunresponsen, ontsteking en weefselschade in het synovium.
+
+Op basis van deze resultaten kan geconcludeerd worden dat RA wordt aangedreven door een sterk geactiveerd immuunsysteem met duidelijke verstoring van ontstekings- en signaalroutes. Dit ondersteunt het beeld van RA als een systemische auto-immuunziekte met complexe genregulatie.
+
+Voor vervolgonderzoek wordt aanbevolen om meer individuele datasets te analyseren en integratie met single-cell RNA-seq toe te passen om celtype-specifieke effecten beter te begrijpen. Daarnaast kan focus op specifieke kandidaatgenen bijdragen aan het identificeren van potentiële therapeutische targets.
 
 ---
 
