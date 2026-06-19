@@ -108,7 +108,7 @@ De Pathview-analyse van de KEGG rheumatoid arthritis pathway laat zien dat meerd
 
 # Conclusie
 
-In dit onderzoek zijn verschillen in genexpressie tussen patiënten met reumatoïde artritis (RA) en gezonde controles geanalyseerd met RNA-seq data uit literatuur. De resultaten laten een duidelijke scheiding zien tussen beide groepen en tonen dat RA sterk wordt gekenmerkt door grootschalige veranderingen in genexpressie.
+In dit onderzoek zijn verschillen in genexpressie tussen patiënten met reumatoïde artritis (RA) en gezonde controles geanalyseerd met RNA-seq data uit de literatuur. De resultaten laten een duidelijke scheiding zien tussen beide groepen en tonen dat RA sterk wordt gekenmerkt door grootschalige veranderingen in genexpressie.
 
 GO- en pathway-analyses laten zien dat vooral immuun- en ontstekingsprocessen sterk oververtegenwoordigd zijn in RA. Hierbij spelen processen zoals leukocyte activation, cytokine signaling en signaaltransductie een centrale rol. Ook KEGG- en Pathview-analyses bevestigen dat de rheumatoid arthritis pathway verstoord is, met veranderde expressie van genen zoals IL6, TNF, CCL2 en MMP13. Dit wijst op actieve immuunresponsen, ontsteking en weefselschade in het synovium.
 
