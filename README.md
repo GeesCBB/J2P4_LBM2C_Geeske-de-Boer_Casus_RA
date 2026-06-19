@@ -8,25 +8,15 @@ Transcriptomics
 
 ---
 
-### Projectstructuur
+# Inhoud/Structuur
 
-```text
-├── 📁 Bronnen/              # Literatuur en wetenschappelijke artikelen
-├── 📁 Data/                 # Count matrix en biologische databestanden
-├── 📁 Flowschema/           # Workflow-afbeeldingen en schema's van de R-pijplijn
-├── 📁 Resultaten/           # Output van de analyses (plots, tabellen, etc.)
-├── 📁 Script/               # R-scripts voor mapping, kwantificatie en DESeq2
-├── 📁 SessionInfo()/        # Softwareversies en R-omgevingsgegevens voor reproduceerbaarheid
-├── 📁 data_stewardship/     # Documentatie rondom databeheer en data-stewardship
-├── 📄 .gitattributes        # Git-configuratie voor bestandskenmerken
-└── 📄 README.md             # Projectbeschrijving en documentatie (dit bestand)
-```
-
-Je kunt direct naar de belangrijkste onderdelen navigeren via deze snelkoppelingen:
-* Bekijk de [wetenschappelijke bronnen](Bronnen)
-* Bekijk de R-scripts in de map [Script](Script)
-* Controleer de reproduceerbaarheid via [`sessionInfo()`](SessionInfo\(\))
-
+* [Data/](Data) - Ruwe en verwerkte datasets voor de analyse van de reuma casus.
+* [Script/](Script) - Overzicht van de scripts gebruikt tijdens de data analyse in R.
+* [Resultaten/](Resultaten) - Figuren van GO-analyse, KEGG-analyse en Pathview analyse.
+* [Bronnen/](Bronnen) - Gebruikte bronnen voor de interpretatie en het maken van scripts in R.
+* [Flowschema/](Flowschema) - Workflow-afbeeldingen en schema's van de R-pijplijn.
+* [SessionInfo()/](SessionInfo\(\)) - Overige documenten en softwareversies gebruikt bij dit project voor de reproduceerbaarheid.
+* [data_stewardship/](data_stewardship) - Beheren van de competentie voor data stewardship.
 
 ---
 
