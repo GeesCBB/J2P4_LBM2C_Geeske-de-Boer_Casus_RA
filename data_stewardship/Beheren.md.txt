@@ -1,13 +1,32 @@
-Uitleg over een efficiënte en gestructureerde manier van beheren.
+## Uitleg over een efficiënte en gestructureerde manier van beheren.
 
 Enkele hulpvragen staan hieronder weergeven. Dit zijn enkele voorbeelden om te schetsen wat er van je verwacht wordt. Denk dus ook zelf goed na over het beheren van data, het belang hiervan en hoe je dat vorm kunt geven!
 
-Waarom is dit een belangrijk onderdeel van onderzoek doen
-Wat is een duidelijke mappenstructuur en waarom houd je dat aan
-Wat is een handige manier voor de naamgeving van bestanden en waarom
-Wat houdt versiebeheer in en waarom doe je dit
-Hoe zorg je voor goede documentatie in scripts
-Wat voor platforms kan je gebruiken om scripts te delen
-Welke tools gebruik je voor data-analyse, zoals bijvoorbeeld voor het veilig opslaan van data
-Hoe zou je omgaan met gevoelige of persoonlijke data
-Wat is het belang van open data en het publiceren van datasets
+---
+
+# Waarom is dit een belangrijk onderdeel van onderzoek doen?
+Goed databeheer is essentieel voor reproduceerbaarheid, transparantie en betrouwbaarheid van onderzoek. In transcriptomics is dit extra belangrijk omdat analyses bestaan uit meerdere stappen, softwareversies en grote datasets. Zonder structuur is het onmogelijk om resultaten te controleren of opnieuw uit te voeren.
+
+# Wat is een duidelijke mappenstructuur en waarom houd je dat aan?
+Een duidelijke mappenstructuur zorgt ervoor dat data, scripts en resultaten logisch gescheiden blijven en makkelijker te vinden/ aan te passen. Dit voorkomt vooral verwarring en maakt het project overzichtelijk en reproduceerbaar.
+
+# Wat is een handige manier voor de naamgeving van bestanden en waarom?
+Bestanden moeten consistent en beschrijvend worden benoemd, voor mij was het hanidg om automatisch deel in mn script te verwerken en als ik het bestand opnieuw ging runnen werd het bestand automatisch verwijderd en vervangen. Dit voorkomt onduidelijkheid en maakt het makkelijk om versies en inhoud te herkennen zonder bestanden te openen.
+
+# Wat houdt versiebeheer in en waarom doe je dit?
+Versiebeheer (bijv. via Git/GitHub) houdt wijzigingen in scripts bij. Hierdoor kan je: fouten terugdraaien, samenwerken en veranderingen documenteren. Dit is belangrijk om de analyse controleerbaar en reproduceerbaar te houden. Soms wil je ook kijken bij eimand van wat is er nu precies veranderd in de code na een update bijvoorbeeld of jij hetb het nooit geupdate en kan je de oude werkwijze nog terugvinden.
+
+# Hoe zorg je voor goede documentatie in scripts?
+Scripts moeten duidelijke comments bevatten die uitleg geven over: wat elke stap doet, welke parameters gebruikt zijn en/of waarom bepaalde keuzes gemaakt zijn. Dit helpt anderen (en jezelf) om de analyse later te begrijpen.
+
+# Wat voor platforms kan je gebruiken om scripts te delen?
+GitHub, GitLab, Bitbucket
+
+# Welke tools gebruik je voor data-analyse, zoals bijvoorbeeld voor het veilig opslaan van data?
+Voor de analyse is gebruikgemaakt van R (v4.5.2) en RStudio. Belangrijke packages zijn onder andere Rsubread, DESeq2, clusterProfiler, goseq en pathview. Deze zorgen samen voor een reproduceerbare en gestandaardiseerde analysepipeline. Ruwe sequencingdata zijn afkomstig uit de NCBI Sequence Read Archive (SRA) en worden lokaal opgeslagen in een gestructureerde projectmap. Hierbij wordt gewerkt met een vaste mappenstructuur (ruwe data, bewerkte data, scripts en resultaten) om te voorkomen dat bestanden overschreven of kwijtgeraakt worden. Grote en originele datasets blijven onveranderd opgeslagen, terwijl alleen bewerkte outputs opnieuw gegenereerd worden via scripts.   
+
+# Hoe zou je omgaan met gevoelige of persoonlijke data?
+Bij menselijke data moet altijd worden gewerkt met geanonimiseerde datasets. Persoonlijke informatie wordt niet opgeslagen of gedeeld. Alleen gecodeerde identifiers (zoals SRA accessionnummers) worden gebruikt. Alles om het zo anoniem mogelijk te houden voor de persoon.
+
+# Wat is het belang van open data en het publiceren van datasets?
+Open data is belangrijk omdat het: reproduceerbaarheid verhoogt, samenwerking mogelijk maakt, verbetring en houdt het transaparant waar we mee bezig zijn. Door datasets via repositories beschikbaar te maken, kunnen andere onderzoekers analyses herhalen en uitbreiden.
