@@ -100,7 +100,7 @@ Voor vervolgonderzoek wordt aanbevolen om meer individuele datasets te analysere
 
 # AI-disclaimer
 
-Bij dit project is gebruikgemaakt van **kunstmatige intelligentie (AI)** ter ondersteuning van programmeerwerk, debugging, structuur van de GitHub repository en tekstuele ondersteuning. Alle analyses, interpretaties en eindcontrole zijn zelfstandig uitgevoerd en gecontroleerd.
+Bij dit project is gebruikgemaakt van kunstmatige intelligentie (AI) ter ondersteuning van programmeerwerk, debugging, structuur van de GitHub repository en tekstuele ondersteuning. Alle analyses, interpretaties en eindcontrole zijn zelfstandig uitgevoerd en gecontroleerd.
 
 ---
 
