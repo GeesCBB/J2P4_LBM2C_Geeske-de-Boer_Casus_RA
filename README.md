@@ -46,27 +46,33 @@ De biologische betekenis werd bepaald met GO-enrichment via `goseq` (v1.60.0) en
 
 ## PCA + volcano
 
+Het doel van deze analyses was om de specifieke verschillen in genexpressie tussen RA-patiënten en gezonde controles in kaart te brengen.De Principal Component Analysis (PCA) toont een zeer duidelijke scheiding tussen de twee groepen langs de eerste hoofdcomponent (Figuur 2A). De gezonde monsters clusteren compact links en de RA-monsters rechts. Dit bewijst dat de ziektetoestand de belangrijkste oorzaak is van de variatie in genexpressie.De volcano plot laat vervolgens zien dat dit expressieverschil op grote schaal duidelijk aanwezig is (Figuur 2B). Een grote hoeveelheid genen (paarse punten) overschrijdt de drempelwaarden voor significantie en fold change. Punten aan de rechterkant van de nullijn duiden op genen die sterk verhoogd tot expressie komen (upregulated) bij RA-patiënten, zoals IGHV3-53 en STAT4. Punten aan de linkerkant geven genen aan die juist sterk verlaagd aanwezig zijn (downregulated), zoals ANKRD30BL en MT-ND6. 
 
-<img width="1198" height="626" alt="image" src="https://github.com/user-attachments/assets/63d3d089-f0c2-481f-bffe-eefadfe06f46" />
+<img width="1198" height="626" alt="image" src="https://github.com/user-attachments/assets/e2fae861-bf74-4260-9961-99c172743a9c" />
 
 ***Figuur 2. Genexpressieprofielen van reumatoïde artritis (RA) patiënten vergeleken met gezonde controles.***
 ***(A)*** *PCA-plot waarbij PC1 (74% variantie) en PC2 (10% variantie) de monsters van RA-patiënten (paars) volledig scheiden van de gezonde controles (grijs).*
 ***(B)*** *Volcano plot van 29.407 genen (RA versus gezonde controles). De paarse punten voldoen aan de drempelwaarden voor significantie ($-\log_{10} P$) en expressieverandering ($\log_2\text{fold change}$). Sterk veranderde genen (o.a. ANKRD30BL, MT-ND6, IGHV3-53 en STAT4) zijn gelabeld.*
 
-***Figuur 2. Principal Component Analysis (PCA) van genexpressiegegevens (RA vs. Normaal).*** *Deze puntenwolk toont de verdeling van de monsters op basis van de eerste twee hoofdcomponenten (PC's). De x-as representeert PC1, die 74% van de totale variantie verklaart, terwijl de y-as PC2 representeert, die verantwoordelijk is voor 10% van de variantie.*
+---
 
-Er is een duidelijke scheiding zichtbaar langs de PC1-as tussen de monsters van de patiënten met Reumatoïde Artritis (RA, paarse stippen) en de gezonde controlegroep (Normal, grijze stippen). De 'Normale' monsters clusteren hoofdzakelijk aan de linkerzijde van de grafiek (negatieve PC1-waarden), terwijl de 'RA' monsters zich aan de rechterzijde bevinden (positieve PC1-waarden). Dit suggereert dat het grootste deel van de variatie in genexpressie tussen deze monsters direct gerelateerd is aan de ziektetoestand.
+## Go-analyse: Dotplot en Enrichment
+Het doel van deze analyse was om de biologische functies en processen achter de differentieel tot expressie gebrachte genen te ontrafelen. Hiervoor is een GO-enrichmentanalyse uitgevoerd.
+
+De analyse toont aan dat vooral immuungerelateerde processen extreem sterk oververtegenwoordigd (verrijkt) zijn in het synoviumweefsel van RA-patiënten (**Figuur 3C–D**). De meest significante biologische processen zijn direct gekoppeld aan immuunactivatie en de adaptieve immuunrespons, waaronder termen als *immune system process* en *leukocyte activation*. Daarnaast zijn ook routes voor cellulaire communicatie en signaaltransductie verrijkt. 
+
+De dot plot bevestigt deze resultaten (**Figuur 3D**). De immuunroutes hebben niet alleen een hoge statistische significantie, maar tonen ook een hoge *GeneRatio*. Dit bewijst dat een substantieel deel van alle genen binnen deze specifieke immuunprocessen actief ontregeld is bij patiënten met RA.
+
+<img width="1196" height="624" alt="image" src="https://github.com/user-attachments/assets/eddbd4c7-a3d7-4e07-8482-314254e7f488" />
+
+***Figuur 3. Gene Ontology (GO) enrichmentanalyse van differentieel tot expressie gebrachte genen (RA versus gezonde controles).*** 
+***(C)*** *Barplot van de top verrijkte *GO Biological Process*-termen op basis van statistische significantie. De x-as weergeeft de $-\log_{10}(p\text{-waarde})$.*
+***(D)*** *Dot plot van de verrijkte GO-termen. De x-as toont de *GeneRatio* (de verhouding van betrokken genen per term). De grootte van de punten representeert het aantal genen (*Count*) en de kleur geeft de adjusted p-waarde (*p.adjust*) weer. De analyses zijn uitgevoerd met `goseq` en `clusterProfiler` om RA-monsters te vergelijken met gezonde controles.*
 
 ---
 
-## Volcano plot
-<img width="945" height="1181" alt="image" src="https://github.com/user-attachments/assets/76c8418a-e346-4dc8-819d-aeb2c038e252" />
 
-***Figuur 3. Volcano plot van differentiële genexpressie tussen RA-patiënten en gezonde controles.*** *Deze grafiek visualiseert de statistische significantie (\(-\log_{10} P\)) uitgezet tegen de mate van verandering in expressie (-log10^2) voor 29.407 variabelen (genen).*
 
-De paarse punten vertegenwoordigen genen die zowel statistisch significant zijn als een substantiële verandering in expressie laten zien. Punten aan de rechterkant van de centrale nullijn duiden op genen die 'upregulated' zijn bij RA-patiënten (zoals IGHV3-53 en STAT4), terwijl punten aan de linkerkant 'downregulated' genen aangeven (zoals ANKRD30BL en MT-ND6). De horizontale stippellijn markeert de drempelwaarde voor statistische significantie, en de verticale stippellijnen geven de grenzen aan voor de fold change.
-
----
 
 ## GO-analyse: Enrichment
 <img width="945" height="756" alt="image" src="https://github.com/user-attachments/assets/48e7d210-8f49-4fcd-9976-f07777fd8bfe" />
@@ -152,6 +158,7 @@ Yu, F., Hu, G., Li, L., Yu, B., & Liu, R. (2022). Identification of key candidat
 Yu, G., Wang, L.-G., Han, Y., & He, Q.-Y. (2012). clusterProfiler: an R package for comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology, 16(5), 284–287. https://doi.org/10.1089/omi.2011.0118
 
 Zhang, F., Wei, K., Slowikowski, K., Fonseka, C. Y., Rao, D. A., Kelly, S., Goodman, S. M., Tabechian, D., Hughes, L. B., Salomon-Escoto, K., Watts, G. F. M., Jonsson, A. H., Rangel-Moreno, J., Meednu, N., Rozo, C., Apruzzese, W., Eisenhaure, T. M., Lieb, D. J., Boyle, D. L., & Mandelin, A. M. (2019). Defining inflammatory cell states in rheumatoid arthritis joint synovial tissues by integrating single-cell transcriptomics and mass cytometry. Nature Immunology, 20(7), 928–942. https://doi.org/10.1038/s41590-019-0378-1
+
 
 
 ---
