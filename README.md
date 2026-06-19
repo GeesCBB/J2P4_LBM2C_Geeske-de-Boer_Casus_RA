@@ -8,7 +8,7 @@ Om meer inzicht te krijgen in de onderliggende mechanismen van deze ziekte, is i
 
 ---
 
-# Methoden
+# Methode
 
 ## Dataset en monsters
 De in dit project gebruikte RNA-seq data zijn afkomstig uit de studie van Platzer et al. (2019), beschikbaar via de NCBI Sequence Read Archive (SRA), bestaande uit acht synoviumbiopten van reumatoïde artritis (RA) patiënten en gezonde controles (SRR4785819–SRR4785988; tabel 1). De ruwe data (FASTQ) zijn oorspronkelijk gegenereerd na RNA-extractie uit synoviumweefsel, gevolgd door library preparation met TruSeq Stranded Total RNA RiboZero (Illumina) en sequencing op een Illumina HiSeq 2000 (paired-end 100 bp). 
@@ -29,7 +29,7 @@ De in dit project gebruikte RNA-seq data zijn afkomstig uit de studie van Platze
 ## Gen-mapping en kwantificatie
 Alle analyses volgden de workflow in R (**Figuur 1**). Reads werden gemapt tegen het humane referentiegenoom GRCh38.p14 (NCBI, 2026). Hiervoor werd een genoomindex gebouwd met `buildindex()` en uitgelijnd met `align()` via `Rsubread` (v2.22.1). Na sortering met `Rsamtools` (v2.24.0) telde `featureCounts()` de reads per gen tot een countmatrix.
 
-## Differentiële expressieanalye en visualisatie
+## Differentiële expressieanalyse en visualisatie
 Expressieverschillen tussen RA en controle werden berekend met `DESeq2` (v1.48.1). Genen waren significant bij een adjusted p-waarde < 0,05 en |log2FoldChange| > 1. Dit filter garandeert statistische en biologische relevantie. De data werden gevisualiseerd in een PCA-plot (`ggplot2` v4.0.2) en volcano plot (`EnhancedVolcano` v1.26.0) (**Figuur 1**).
 
 
