@@ -32,8 +32,7 @@ Alle analyses volgden de workflow in R (**Figuur 1**). Reads werden gemapt tegen
 ## Differentiële expressieanalyse en visualisatie
 Expressieverschillen tussen RA en controle werden berekend met `DESeq2` (v1.48.1). Genen waren significant bij een adjusted p-waarde < 0,05 en |log2FoldChange| > 1. Dit filter garandeert statistische en biologische relevantie. De data werden gevisualiseerd in een PCA-plot (`ggplot2` v4.0.2) en volcano plot (`EnhancedVolcano` v1.26.0) (**Figuur 1**).
 
-
-<img width="2286" height="3851" alt="image" src="https://github.com/user-attachments/assets/05dc722c-f9a8-45c7-9ee2-1a1263f31fbb" />
+<img width="2286" height="3851" alt="image" src="https://github.com/user-attachments/assets/eb40b27f-babf-43ca-b4a4-ef9970820dac" />
 
 ***Figuur 1. Workflow voor de RNA-seq data-analyse bij reumatoïde artritis (RA). Deze afbeelding toont de stappen van ruwe data naar de resultaten.*** *In het midden staan de processtappen (rechthoeken). De workflow begint met het voorbereiden van de data. Daarna worden de reads gemapt op het referentiegenoom en geteld tot een countmatrix (bovenste blokken). Vervolgens wordt de metadata toegevoegd en start de differentiële expressieanalyse met DESeq2 (middelste blokken). De resultaten worden daarna gevisualiseerd met een PCA-plot en volcano plot (linksonder). Tot slot worden de belangrijkste genen functioneel geïnterpreteerd met een GO-enrichment en een KEGG pathway-analyse (rechtsonder). De invoerbestanden staan links en de gemaakte tussenbestanden staan rechts (parallellogrammen). Het eindresultaat bestaat uit de grafieken en pathway-visualisaties onderaan.*
 
