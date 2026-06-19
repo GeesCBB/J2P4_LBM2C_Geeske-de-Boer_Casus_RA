@@ -100,20 +100,21 @@ Voor vervolgonderzoek wordt aanbevolen om meer individuele datasets te analysere
 
 # AI-disclaimer
 
-Bij dit project is gebruikgemaakt van kunstmatige intelligentie (AI) ter ondersteuning van programmeerwerk, debugging, structuur van de GitHub repository en tekstuele ondersteuning. Alle analyses, interpretaties en eindcontrole zijn zelfstandig uitgevoerd en gecontroleerd.
+Bij dit project is gebruikgemaakt van kunstmatige intelligentie (AI) ter ondersteuning van het programmeerwerk, debugging, de structuur van de GitHub repository, controle en tekstverbetering. Alle inhoudelijke analyses, interpretaties en de eindcontrole zijn zelfstandig uitgevoerd en gecontroleerd.
 
 ---
-[Bronnen](Bronnen)
-# Bronnen
+# [Bronnen](Bronnen)
 
 * Begovich, A. B., Carlton, V. E., Honigberg, L. A., Schrodi, S. J., Chokkalingam, A. P., Alexander, H. C., Ardlie, K. G., Huang, Q., Smith, A. M., Spoerke, J. M., Conn, M. T., Chang, M., Chang, S. Y., Saiki, R. K., Catanese, J. J., Leong, D. U., Garcia, V. E., McAllister, L. B., Jeffery, D. A., Lee, A. T., … Gregersen, P. K. (2004). A missense single-nucleotide polymorphism in a gene encoding a protein tyrosine phosphatase (PTPN22) is associated with rheumatoid arthritis. American journal of human genetics, 75(2), 330–337. https://doi.org/10.1086/422827
 * Gabriel S. E. (2001). The epidemiology of rheumatoid arthritis. Rheumatic diseases clinics of North America, 27(2), 269–281. https://doi.org/10.1016/s0889-857x(05)70201-5
+* Google. (2026, 19 juni). Gemini (Versie Gemini 1.5 Pro) [Groot taalmodel]. google.com
 * Jang, S., Kwon, E. J., & Lee, J. J. (2022). Rheumatoid Arthritis: Pathogenic Roles of Diverse Immune Cells. International journal of molecular sciences, 23(2), 905. https://doi.org/10.3390/ijms23020905
 * Kanehisa, M., Furumichi, M., Sato, Y., Ishiguro-Watanabe, M., & Tanabe, M. (2021). KEGG: integrating viruses and cellular organisms. Nucleic acids research, 49(D1), D545–D551. https://doi.org/10.1093/nar/gkaa970
 * Liu, F., Huang, Y., Liu, F., & Wang, H. (2023). Identification of immune-related genes in diagnosing atherosclerosis with rheumatoid arthritis through bioinformatics analysis and machine learning. Frontiers in immunology, 14, 1126647. https://doi.org/10.3389/fimmu.2023.1126647
 * Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome biology, 15(12), 550. https://doi.org/10.1186/s13059-014-0550-8
 * Majithia, V., & Geraci, S. A. (2007). Rheumatoid arthritis: diagnosis and management. The American journal of medicine, 120(11), 936–939. https://doi.org/10.1016/j.amjmed.2007.04.005
 * NCBI. (2026). *Homo sapiens genome assembly GRCh38.p14*. NCBI Dataset.
+* OpenAI. (2026, 19 juni). ChatGPT (Versie GPT-4o) [Groot taalmodel]. openai.com
 * Paroli, M., & Sirinian, M. I. (2023). When Autoantibodies Are Missing: The Challenge of Seronegative Rheumatoid Arthritis. Antibodies (Basel, Switzerland), 12(4), 69. https://doi.org/10.3390/antib12040069
 * Platzer, A., Nussbaumer, T., Karonitsch, T., Smolen, J. S., & Aletaha, D. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. PloS one, 14(7), e0219698. https://doi.org/10.1371/journal.pone.0219698
 * Radu, A. F., & Bungau, S. G. (2021). Management of Rheumatoid Arthritis: An Overview. Cells, 10(11), 2857. https://doi.org/10.3390/cells10112857
