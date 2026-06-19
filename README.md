@@ -42,9 +42,9 @@ De biologische betekenis werd bepaald met GO-enrichment via `goseq` (v1.60.0) en
 
 ---
 
-# Resultaten: +- 200 woorden, inclusief correcte verwijzingen. beschrijf wat je afleest van uit figuur niet de details dat staat in het bijschrift. gebruik tussenkopjes, begin met doel, wat voor analyse heb je gedaan wat wil je eruit halen aan informatie beschrijf dan de belangrijkste bevindingen en verwijs naar het figuur, zet gresnwaarde voor volcano in tekst. in bijscrift welke groepen je met elkaar vergelijkt ra vs controle. Teskt boven figuur (bijschrift natuurlijk wel onder en voor een tabel er boven duh).
+# Resultaten
 
-## PCA + volcano
+## PCA en volcano plot: duidelijke scheiding en brede genexpressieverschillen tussen RA en controles
 
 Het doel van deze analyses was om de specifieke verschillen in genexpressie tussen RA-patiënten en gezonde controles in kaart te brengen.De Principal Component Analysis (PCA) toont een zeer duidelijke scheiding tussen de twee groepen langs de eerste hoofdcomponent (Figuur 2A). De gezonde monsters clusteren compact links en de RA-monsters rechts. Dit bewijst dat de ziektetoestand de belangrijkste oorzaak is van de variatie in genexpressie.De volcano plot laat vervolgens zien dat dit expressieverschil op grote schaal duidelijk aanwezig is (Figuur 2B). Een grote hoeveelheid genen (paarse punten) overschrijdt de drempelwaarden voor significantie en fold change. Punten aan de rechterkant van de nullijn duiden op genen die sterk verhoogd tot expressie komen (upregulated) bij RA-patiënten, zoals IGHV3-53 en STAT4. Punten aan de linkerkant geven genen aan die juist sterk verlaagd aanwezig zijn (downregulated), zoals ANKRD30BL en MT-ND6. 
 
@@ -56,12 +56,12 @@ Het doel van deze analyses was om de specifieke verschillen in genexpressie tuss
 
 ---
 
-## Go-analyse: Dotplot en Enrichment
-Het doel van deze analyse was om de biologische functies en processen achter de differentieel tot expressie gebrachte genen te ontrafelen. Hiervoor is een GO-enrichmentanalyse uitgevoerd.
+## GO-enrichmentanalyse: oververtegenwoordigde immuun- en signaalprocessen in RA
+GO-enrichmentanalyse werd uitgevoerd om te bepalen welke biologische processen vaker voorkomen in genen die verschillen tussen RA-patiënten en gezonde controles.
 
-De analyse toont aan dat vooral immuungerelateerde processen extreem sterk oververtegenwoordigd (verrijkt) zijn in het synoviumweefsel van RA-patiënten (**Figuur 3C–D**). De meest significante biologische processen zijn direct gekoppeld aan immuunactivatie en de adaptieve immuunrespons, waaronder termen als *immune system process* en *leukocyte activation*. Daarnaast zijn ook routes voor cellulaire communicatie en signaaltransductie verrijkt. 
+De analyse laat zien dat vooral immuunprocessen oververtegenwoordigd zijn in RA (Figuur 3C–D). Dit omvat onder andere immune system process en leukocyte activation. Daarnaast komen processen voor signaaltransductie en celcommunicatie vaker voor in genen die verschillen tussen RA en controles.
 
-De dot plot bevestigt deze resultaten (**Figuur 3D**). De immuunroutes hebben niet alleen een hoge statistische significantie, maar tonen ook een hoge *GeneRatio*. Dit bewijst dat een substantieel deel van alle genen binnen deze specifieke immuunprocessen actief ontregeld is bij patiënten met RA.
+De dot plot bevestigt deze resultaten en laat zien dat deze processen zowel een hoge significantie als een hoge gene ratio hebben. Dit betekent dat veel genen binnen deze processen verschillen in expressie tussen RA en controles (Figuur 3D).
 
 <img width="1196" height="624" alt="image" src="https://github.com/user-attachments/assets/eddbd4c7-a3d7-4e07-8482-314254e7f488" />
 
@@ -71,37 +71,7 @@ De dot plot bevestigt deze resultaten (**Figuur 3D**). De immuunroutes hebben ni
 
 ---
 
-
-
-
-## GO-analyse: Enrichment
-<img width="945" height="756" alt="image" src="https://github.com/user-attachments/assets/48e7d210-8f49-4fcd-9976-f07777fd8bfe" />
-
-***Figuur 4. Top 10 verrijkte Gene Ontology (GO) termen.*** *De staafdiagram toont de tien meest significante biologische processen en moleculaire functies die geassocieerd zijn met de differentieel tot expressie gebrachte genen, geanalyseerd met goseq. De x-as geeft de negatieve logaritme van de p-waarde weer (\(-\log_{10} P\)), waarbij een langere staaf duidt op een hogere statistische significantie.*
-
-De termen zijn sterk gerelateerd aan het immuunsysteem, met 'immunoglobulin complex' als de meest significante term. Andere prominente categorieën zijn 'immune system process', 'adaptive immune response' en 'leukocyte activation'. Deze resultaten bevestigen dat de geobserveerde genexpressie-verschillen in de RA-patiënten primair gedreven worden door actieve immuunresponsen en ontstekingsprocessen.
-
-
----
-## GO-analyse: Dotplot
-<img width="753" height="603" alt="image" src="https://github.com/user-attachments/assets/ad988223-587d-40de-ab1e-e1a9bba4b330" />
-
-***Figuur 5. Dot plot van de Gene Ontology (GO) Biological Process verrijkingsanalyse.*** *Deze grafiek toont de verrijkte biologische processen op basis van de genexpressiedata. De x-as geeft de 'GeneRatio' weer, wat de verhouding is van genen uit de dataset die betrokken zijn bij een specifieke term ten opzichte van het totaal aantal genen in die term.*
-
-De grootte van de cirkels (Count) representeert het absolute aantal genen dat geassocieerd is met de betreffende GO-term. De kleur van de cirkels geeft de aangepaste p-waarde (p.adjust) aan, waarbij rood staat voor een hogere significantie en blauw voor een lagere significantie binnen deze topselectie. Opvallende processen in deze analyse zijn onder andere 'signal release', 'axonogenesis' en verschillende ontwikkelingsprocessen zoals 'embryonic organ development'.
-
-
-
----
-
 ## KEGG Rheumatoid Arthritis pathway (hsa05323)
-<img width="746" height="429" alt="image" src="https://github.com/user-attachments/assets/ae227dcf-2646-4f8c-81fb-0360212fac19" />
-
-***Figuur 6. KEGG-pathway visualisatie van Reumatoïde Artritis.*** *Dit diagram (gegenereerd met Pathview) projecteert de genexpressiegegevens op de officiële KEGG-pathway voor RA. Het brengt de interacties in kaart tussen verschillende celtypen in het synovium, zoals T-cellen, B-cellen, macrofagen en fibroblasten.*
-
-De kleuren van de genen/eiwitten geven de mate van expressie aan: paars duidt op een hogere expressie (upregulated) en roze/rood op een lagere expressie (downregulated) in de RA-groep vergeleken met de controles. De figuur visualiseert hoe deze expressieverschillen bijdragen aan pathologische processen zoals: Leukocyte migration & Inflammation: Door verhoogde expressie van cytokines (zoals IL-6 en IL-15) en chemokines (zoals CCL2 en CXCL1). Joint destruction & Bone resorption: Door de activatie van osteoclasten (o.a. via de RANKL-pathway) en de productie van matrix-afbrekende enzymen (MMP's).
-
-
 
 ---
 
