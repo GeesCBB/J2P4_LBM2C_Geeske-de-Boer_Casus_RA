@@ -103,7 +103,7 @@ Voor vervolgonderzoek wordt aanbevolen om meer individuele datasets te analysere
 Bij dit project is gebruikgemaakt van kunstmatige intelligentie (AI) ter ondersteuning van programmeerwerk, debugging, structuur van de GitHub repository en tekstuele ondersteuning. Alle analyses, interpretaties en eindcontrole zijn zelfstandig uitgevoerd en gecontroleerd.
 
 ---
-
+[Bronnen](Bronnen)
 # Bronnen
 
 * Begovich, A. B., Carlton, V. E., Honigberg, L. A., Schrodi, S. J., Chokkalingam, A. P., Alexander, H. C., Ardlie, K. G., Huang, Q., Smith, A. M., Spoerke, J. M., Conn, M. T., Chang, M., Chang, S. Y., Saiki, R. K., Catanese, J. J., Leong, D. U., Garcia, V. E., McAllister, L. B., Jeffery, D. A., Lee, A. T., … Gregersen, P. K. (2004). A missense single-nucleotide polymorphism in a gene encoding a protein tyrosine phosphatase (PTPN22) is associated with rheumatoid arthritis. American journal of human genetics, 75(2), 330–337. https://doi.org/10.1086/422827
