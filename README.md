@@ -37,7 +37,7 @@ Expressieverschillen tussen RA en controle zijn berekend met DESeq2 (v1.48.1). G
 ***Figuur 1. Workflow voor de RNA-seq data-analyse bij reumatoïde artritis (RA).*** *Deze afbeelding toont de stappen van ruwe data naar de resultaten. In het midden staan de processtappen (rechthoeken). De workflow begint met het voorbereiden van de data. Daarna zijn de reads gemapt op het referentiegenoom en geteld tot een countmatrix (bovenste blokken). Vervolgens is de metadata toegevoegd en is de differentiële expressieanalyse met DESeq2 gestart (middelste blokken). De resultaten zijn daarna gevisualiseerd met een PCA-plot en volcano plot (linksonder). Tot slot zijn de belangrijkste genen functioneel geïnterpreteerd met een GO-enrichment en een KEGG pathway-analyse (rechtsonder). De invoerbestanden staan links en de gemaakte tussenbestanden staan rechts (parallellogrammen). Het eindresultaat bestaat uit de grafieken en pathway-visualisaties onderaan.*
 
 ## Functionele interpretatie en software
-De biologische betekenis is bepaald met GO-enrichment via goseq (v1.60.0) en clusterProfiler (v4.16.0) **(Figuur 1)**. Daarnaast heeft pathview (v1.48.0) de genexpressie in de relevante KEGG-pathway hsa05323 (Rheumatoid arthritis) getoond. Alle overige softwaregegevens staan in sessionInfo() in de bijlage voor de reproduceerbaarheid.
+De biologische betekenis is bepaald met GO-enrichment via goseq (v1.60.0) en clusterProfiler (v4.16.0) **(Figuur 1)**. Daarnaast heeft pathview (v1.48.0) de genexpressie in de relevante KEGG-pathway hsa05323 (Rheumatoid arthritis) getoond. Alle overige softwaregegevens staan in [sessionInfo()](SessionInfo()) in de bijlage voor de reproduceerbaarheid.
 
 ---
 
