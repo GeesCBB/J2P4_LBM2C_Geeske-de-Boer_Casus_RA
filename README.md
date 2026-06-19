@@ -91,45 +91,26 @@ Bij dit project is gebruikgemaakt van **kunstmatige intelligentie (AI)** ter ond
 
 ---
 
-# Bronnen (nog aanvullen en goed neerzetten)
+# Bronnen
 
-Begovich, A. B., Carlton, V. E., Honigberg, L. A., Schrodi, S. J., Chokkalingam, A. P., Alexander, H. C., ... & Gregersen, P. K. (2004). A missense single-nucleotide polymorphism in a gene encoding a protein tyrosine phosphatase (PTPN22) is associated with rheumatoid arthritis. American Journal of Human Genetics, 75(2), 330–337. doi.org
-
-Jang S, Kwon EJ, Lee JJ. Rheumatoid Arthritis: Pathogenic Roles of Diverse Immune Cells. Int J Mol Sci. 2022 Jan 14;23(2):905. doi: 10.3390/ijms23020905. PMID: 35055087; PMCID: PMC8780115.
-
-Padyukov, L. (2022). Genetics of rheumatoid arthritis. Seminars in Immunopathology, 44(1), 47–62. doi.org
-
-Paroli, M., & Sirinian, M. I. (2023). When Autoantibodies Are Missing: The Challenge of Seronegative Rheumatoid Arthritis. Antibodies, 12(4), 69. doi.org
-
-Platzer, A., Nussbaumer, T., Karonitsch, T., Smolen, J. S., & Aletaha, D. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. PloS one, 14(7), e0219698. https://doi.org/10.1371/journal.pone.0219698
-
-Sahin, D., Di Matteo, A., & Emery, P. (2025). Biomarkers in the diagnosis, prognosis and management of rheumatoid arthritis: A comprehensive review. Annals of clinical biochemistry, 62(1), 3–21. https://doi.org/10.1177/00045632241285843
-
-World Health Organization. (2023, 28 juni). Rheumatoid arthritis. https://www.who.int/news-room/fact-sheets/detail/rheumatoid-arthritis (als artikel nog juist zeten)
-
-Gabriel, S. E. (2001). The epidemiology of rheumatoid arthritis. Rheumatic Disease Clinics of North America, 27(2), 269–281. https://doi.org/10.1016/s0889-857x(05)70201-5
-
-Kanehisa, M., Furumichi, M., Sato, Y., Ishiguro-Watanabe, M., & Tanabe, M. (2023). KEGG: integrating viruses and cellular organisms. Nucleic Acids Research, 51(D1), D587–D592. https://doi.org/10.1093/nar/gkac963
-
-Liu, F., Huang, Y., Liu, F., & Wang, H. (2023). Identification of immune-related genes in diagnosing atherosclerosis with rheumatoid arthritis through bioinformatics analysis and machine learning. Frontiers in Immunology, 14. https://doi.org/10.3389/fimmu.2023.1126647
-
-Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology, 15(12), 550. https://doi.org/10.1186/s13059-014-0550-8
-
-Majithia, V., & Geraci, S. A. (2007). Rheumatoid Arthritis: Diagnosis and Management. The American Journal of Medicine, 120(11), 936–939. https://doi.org/10.1016/j.amjmed.2007.04.005
-
-NCBI. (2026). Homo sapiens genome assembly GRCh38.p14. NCBI. Retrieved from NCBI Dataset
-
-Radu, A.-F., & Bungău, S. G. (2021). Management of Rheumatoid Arthritis: An Overview. Cells, 10(11), 2857. https://doi.org/10.3390/cells10112857
-
-The Gene Ontology Consortium. (2021). The Gene Ontology resource: enriching a GOld mine. Nucleic Acids Research, 49(D1), D325–D334. https://doi.org/10.1093/nar/gkaa1113
-
-Yu, F., Hu, G., Li, L., Yu, B., & Liu, R. (2022). Identification of key candidate genes and biological pathways in the synovial tissue of patients with rheumatoid arthritis. Experimental and Therapeutic Medicine, 23(6). https://doi.org/10.3892/etm.2022.11295
-
-Yu, G., Wang, L.-G., Han, Y., & He, Q.-Y. (2012). clusterProfiler: an R package for comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology, 16(5), 284–287. https://doi.org/10.1089/omi.2011.0118
-
-Zhang, F., Wei, K., Slowikowski, K., Fonseka, C. Y., Rao, D. A., Kelly, S., Goodman, S. M., Tabechian, D., Hughes, L. B., Salomon-Escoto, K., Watts, G. F. M., Jonsson, A. H., Rangel-Moreno, J., Meednu, N., Rozo, C., Apruzzese, W., Eisenhaure, T. M., Lieb, D. J., Boyle, D. L., & Mandelin, A. M. (2019). Defining inflammatory cell states in rheumatoid arthritis joint synovial tissues by integrating single-cell transcriptomics and mass cytometry. Nature Immunology, 20(7), 928–942. https://doi.org/10.1038/s41590-019-0378-1
-
-
+* Begovich, A. B., Carlton, V. E., Honigberg, L. A., Schrodi, S. J., Chokkalingam, A. P., Alexander, H. C., ... & Gregersen, P. K. (2004). A missense single-nucleotide polymorphism in a gene encoding a protein tyrosine phosphatase (PTPN22) is associated with rheumatoid arthritis. *American Journal of Human Genetics*, 75(2), 330–337. [https://doi.org](https://doi.org)
+* Gabriel, S. E. (2001). The epidemiology of rheumatoid arthritis. *Rheumatic Disease Clinics of North America*, 27(2), 269–281. [https://doi.org](https://doi.org)
+* Jang, S., Kwon, EJ., & Lee, JJ. (2022). Rheumatoid Arthritis: Pathogenic Roles of Diverse Immune Cells. *International Journal of Molecular Sciences*, 23(2), 905. [https://doi.org](https://doi.org)
+* Kanehisa, M., Furumichi, M., Sato, Y., Ishiguro-Watanabe, M., & Tanabe, M. (2023). KEGG: integrating viruses and cellular organisms. *Nucleic Acids Research*, 51(D1), D587–D592. [https://doi.org](https://doi.org)
+* Liu, F., Huang, Y., Liu, F., & Wang, H. (2023). Identification of immune-related genes in diagnosing atherosclerosis with rheumatoid arthritis through bioinformatics analysis and machine learning. *Frontiers in Immunology*, 14. [https://doi.org](https://doi.org)
+* Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biology*, 15(12), 550. [https://doi.org](https://doi.org)
+* Majithia, V., & Geraci, S. A. (2007). Rheumatoid Arthritis: Diagnosis and Management. *The American Journal of Medicine*, 120(11), 936–939. [https://doi.org](https://doi.org)
+* NCBI. (2026). *Homo sapiens genome assembly GRCh38.p14*. NCBI Dataset.
+* Padyukov, L. (2022). Genetics of rheumatoid arthritis. *Seminars in Immunopathology*, 44(1), 47–62. [https://doi.org](https://doi.org)
+* Paroli, M., & Sirinian, M. I. (2023). When Autoantibodies Are Missing: The Challenge of Seronegative Rheumatoid Arthritis. *Antibodies*, 12(4), 69. [https://doi.org](https://doi.org)
+* Platzer, A., Nussbaumer, T., Karonitsch, T., Smolen, J. S., & Aletaha, D. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. *PLoS ONE*, 14(7), e0219698. [https://doi.org](https://doi.org)
+* Radu, A.-F., & Bungău, S. G. (2021). Management of Rheumatoid Arthritis: An Overview. *Cells*, 10(11), 2857. [https://doi.org](https://doi.org)
+* Sahin, D., Di Matteo, A., & Emery, P. (2025). Biomarkers in the diagnosis, prognosis and management of rheumatoid arthritis: A comprehensive review. *Annals of Clinical Biochemistry*, 62(1), 3–21. [https://doi.org](https://doi.org)
+* The Gene Ontology Consortium. (2021). The Gene Ontology resource: enriching a GOld mine. *Nucleic Acids Research*, 49(D1), D325–D334. [https://doi.org](https://doi.org)
+* World Health Organization. (2023, 28 juni). *Rheumatoid arthritis*. [https://who.int](https://who.int)
+* Yu, F., Hu, G., Li, L., Yu, B., & Liu, R. (2022). Identification of key candidate genes and biological pathways in the synovial tissue of patients with rheumatoid arthritis. *Experimental and Therapeutic Medicine*, 23(6), 373. [https://doi.org](https://doi.org)
+* Yu, G., Wang, L.-G., Han, Y., & He, Q.-Y. (2012). clusterProfiler: an R package for comparing biological themes among gene clusters. *OMICS: A Journal of Integrative Biology*, 16(5), 284–287. [https://doi.org](https://doi.org)
+* Zhang, F., Wei, K., Slowikowski, K., Fonseka, C. Y., Rao, D. A., Kelly, S., Goodman, S. M., Tabechian, D., Hughes, L. B., Salomon-Escoto, K., Watts, G. F. M., Jonsson, A. H., Rangel-Moreno, J., Meednu, N., Rozo, C., Apruzzese, W., Eisenhaure, T. M., Lieb, D. J., Boyle, D. L., & Mandelin, A. M. (2019). Defining inflammatory cell states in rheumatoid arthritis joint synovial tissues by integrating single-cell transcriptomics and mass cytometry. *Nature Immunology*, 20(7), 928–942. [https://doi.org](https://doi.org)
 
 ---
 
@@ -138,6 +119,3 @@ NHL Stenden Hogeschool
 Biologie en Medisch Laboratoriumonderzoek
 25-26 J2P4 – Innovatieve Diagnostiek
 Transcriptomics
-
-
-voor het beheren gebruik voorbeelden om je beheren naar voren te laten komen
