@@ -1,5 +1,35 @@
 # Transcriptomicsanalyse toont sterke immuunactivatie en ontstekingssignatuur in reumatoïde artritis
 
+**Geeske de Boer**
+NHL Stenden Hogeschool
+Biologie en Medisch Laboratoriumonderzoek
+25-26 J2P4 – Innovatieve Diagnostiek
+Transcriptomics
+
+---
+
+### Projectstructuur
+
+```text
+├── 📁 Bronnen/              # Literatuur en wetenschappelijke artikelen
+├── 📁 Data/                 # Count matrix en biologische databestanden
+├── 📁 Flowschema/           # Workflow-afbeeldingen en schema's van de R-pijplijn
+├── 📁 Resultaten/           # Output van de analyses (plots, tabellen, etc.)
+├── 📁 Script/               # R-scripts voor mapping, kwantificatie en DESeq2
+├── 📁 SessionInfo()/        # Softwareversies en R-omgevingsgegevens voor reproduceerbaarheid
+├── 📁 data_stewardship/     # Documentatie rondom databeheer en data-stewardship
+├── 📄 .gitattributes        # Git-configuratie voor bestandskenmerken
+└── 📄 README.md             # Projectbeschrijving en documentatie (dit bestand)
+```
+
+Je kunt direct naar de belangrijkste onderdelen navigeren via deze snelkoppelingen:
+* Bekijk de [wetenschappelijke bronnen](Bronnen)
+* Bekijk de R-scripts in de map [Script](Script)
+* Controleer de reproduceerbaarheid via [`sessionInfo()`](SessionInfo\(\))
+
+
+---
+
 # Introductie
 
 Reumatoïde (RA) is een chronische, systematische auto-immuunziekte die voornamelijk gewrichten en omliggend weefsel aantast. In 2019 leefde er wereldbreed 18 miljoen mensen met RA, dit bedraagt ​​ongeveer 1% in de volwassene bevolking. Vrouwen worden vaker getroffen dan mannen, ongveer 70% meer waarvan 55% ouder als 55 is. Patiënten wie leven met RA ervaren een aanzienlijke negatieve impact op hun kwaliteit van leven. Zonder behandeling kan de systemische ontsteking zich via de bloedbaan door het lichaam verspreiden. Dit leidt bij RA tot onomkeerbare gewrichtsschade, de ontwikkeling van extra-articulaire manifestaties, invaliditeit en een verhoogd mortaliteitsrisico (Sahin et al., 2025; World Health Organization, 2023).
@@ -37,7 +67,7 @@ Expressieverschillen tussen RA en controle zijn berekend met DESeq2 (v1.48.1). G
 ***Figuur 1. Workflow voor de RNA-seq data-analyse bij reumatoïde artritis (RA).*** *Deze afbeelding toont de stappen van ruwe data naar de resultaten. In het midden staan de processtappen (rechthoeken). De workflow begint met het voorbereiden van de data. Daarna zijn de reads gemapt op het referentiegenoom en geteld tot een countmatrix (bovenste blokken). Vervolgens is de metadata toegevoegd en is de differentiële expressieanalyse met DESeq2 gestart (middelste blokken). De resultaten zijn daarna gevisualiseerd met een PCA-plot en volcano plot (linksonder). Tot slot zijn de belangrijkste genen functioneel geïnterpreteerd met een GO-enrichment en een KEGG pathway-analyse (rechtsonder). De invoerbestanden staan links en de gemaakte tussenbestanden staan rechts (parallellogrammen). Het eindresultaat bestaat uit de grafieken en pathway-visualisaties onderaan.*
 
 ## Functionele interpretatie en software
-De biologische betekenis is bepaald met GO-enrichment via goseq (v1.60.0) en clusterProfiler (v4.16.0) **(Figuur 1)**. Daarnaast heeft pathview (v1.48.0) de genexpressie in de relevante KEGG-pathway hsa05323 (Rheumatoid arthritis) getoond. Alle overige softwaregegevens staan in [sessionInfo()](SessionInfo()) in de bijlage voor de reproduceerbaarheid.
+De biologische betekenis is bepaald met GO-enrichment via goseq (v1.60.0) en clusterProfiler (v4.16.0) **(Figuur 1)**. Daarnaast heeft pathview (v1.48.0) de genexpressie in de relevante KEGG-pathway hsa05323 (Rheumatoid arthritis) getoond. Alle overige softwaregegevens staan in [SessionInfo()](SessionInfo()) in de bijlage voor de reproduceerbaarheid.
 
 ---
 
@@ -124,11 +154,3 @@ Bij dit project is gebruikgemaakt van kunstmatige intelligentie (AI) ter onderst
 * Yu, F., Hu, G., Li, L., Yu, B., & Liu, R. (2022). Identification of key candidate genes and biological pathways in the synovial tissue of patients with rheumatoid arthritis. Experimental and therapeutic medicine, 23(6), 368. https://doi.org/10.3892/etm.2022.11295
 * Yu, G., Wang, L. G., Han, Y., & He, Q. Y. (2012). clusterProfiler: an R package for comparing biological themes among gene clusters. Omics : a journal of integrative biology, 16(5), 284–287. https://doi.org/10.1089/omi.2011.0118
 * Zhang, F., Wei, K., Slowikowski, K., Fonseka, C. Y., Rao, D. A., Kelly, S., Goodman, S. M., Tabechian, D., Hughes, L. B., Salomon-Escoto, K., Watts, G. F. M., Jonsson, A. H., Rangel-Moreno, J., Meednu, N., Rozo, C., Apruzzese, W., Eisenhaure, T. M., Lieb, D. J., Boyle, D. L., Mandelin, A. M., 2nd, … Raychaudhuri, S. (2019). Defining inflammatory cell states in rheumatoid arthritis joint synovial tissues by integrating single-cell transcriptomics and mass cytometry. Nature immunology, 20(7), 928–942. https://doi.org/10.1038/s41590-019-0378-1 
-
----
-
-**Geeske de Boer**
-NHL Stenden Hogeschool
-Biologie en Medisch Laboratoriumonderzoek
-25-26 J2P4 – Innovatieve Diagnostiek
-Transcriptomics
