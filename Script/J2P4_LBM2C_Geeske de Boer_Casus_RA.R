@@ -321,7 +321,7 @@ kegg_results <- enrichKEGG(
   pvalueCutoff  = 0.05                 
 )
 
-# Plot maken en stylen
+
 kegg_p <- dotplot(kegg_results, showCategory = 5, color = "p.adjust") + 
   scale_color_viridis_c(option = "D", direction = -1) + 
   theme_minimal() + 
@@ -345,16 +345,15 @@ pathview(
   pathway.id  = "hsa05323",
   species     = "hsa",
   
-  # Koppeling naar jouw variabelen uit stap 0.5 (zonder aanhalingstekens)
-  low         = list(gene = col_down),    # Wordt automatisch "hotpink"
-  mid         = list(gene = col_neutral), # Wordt automatisch "grey90"
-  high        = list(gene = col_up),      # Wordt automatisch "purple"
+
+  low         = list(gene = col_down),    
+  mid         = list(gene = col_neutral), 
+  high        = list(gene = col_up),      
   
   limit       = list(gene = 2, cpd = 1),
   kegg.native = TRUE
 )
 
-# Bestanden hernoemen zonder overschrijven
 if (file.exists("KEGG_pathview.png")) {
   file.remove("KEGG_pathview.png")
 }
