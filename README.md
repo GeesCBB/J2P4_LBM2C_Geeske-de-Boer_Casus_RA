@@ -42,60 +42,36 @@ De biologische betekenis werd bepaald met GO-enrichment via `goseq` (v1.60.0) en
 
 ---
 
-# Resultaten: +- 200 woorden, inclusief correcte verwijzingen. beschrijf wat je afleest van uit figuur niet de details dat staat in het bijschrift. gebruik tussenkopjes, begin met doel, wat voor analyse heb je gedaan wat wil je eruit halen aan informatie beschrijf dan de belangrijkste bevindingen en verwijs naar het figuur, zet gresnwaarde voor volcano in tekst. in bijscrift welke groepen je met elkaar vergelijkt ra vs controle. Teskt boven figuur (bijschrift natuurlijk wel onder en voor een tabel er boven duh).
+# Resultaten
 
-## PCA + volcano
+## PCA en volcano plot: duidelijke scheiding en brede genexpressieverschillen tussen RA en controles
 
+Het doel van deze analyses was om de specifieke verschillen in genexpressie tussen RA-patiënten en gezonde controles in kaart te brengen.De Principal Component Analysis (PCA) toont een zeer duidelijke scheiding tussen de twee groepen langs de eerste hoofdcomponent (Figuur 2A). De gezonde monsters clusteren compact links en de RA-monsters rechts. Dit bewijst dat de ziektetoestand de belangrijkste oorzaak is van de variatie in genexpressie.De volcano plot laat vervolgens zien dat dit expressieverschil op grote schaal duidelijk aanwezig is (Figuur 2B). Een grote hoeveelheid genen (paarse punten) overschrijdt de drempelwaarden voor significantie en fold change. Punten aan de rechterkant van de nullijn duiden op genen die sterk verhoogd tot expressie komen (upregulated) bij RA-patiënten, zoals IGHV3-53 en STAT4. Punten aan de linkerkant geven genen aan die juist sterk verlaagd aanwezig zijn (downregulated), zoals ANKRD30BL en MT-ND6. 
 
-<img width="1198" height="626" alt="image" src="https://github.com/user-attachments/assets/63d3d089-f0c2-481f-bffe-eefadfe06f46" />
+<img width="1198" height="626" alt="image" src="https://github.com/user-attachments/assets/e2fae861-bf74-4260-9961-99c172743a9c" />
 
 ***Figuur 2. Genexpressieprofielen van reumatoïde artritis (RA) patiënten vergeleken met gezonde controles.***
 ***(A)*** *PCA-plot waarbij PC1 (74% variantie) en PC2 (10% variantie) de monsters van RA-patiënten (paars) volledig scheiden van de gezonde controles (grijs).*
 ***(B)*** *Volcano plot van 29.407 genen (RA versus gezonde controles). De paarse punten voldoen aan de drempelwaarden voor significantie ($-\log_{10} P$) en expressieverandering ($\log_2\text{fold change}$). Sterk veranderde genen (o.a. ANKRD30BL, MT-ND6, IGHV3-53 en STAT4) zijn gelabeld.*
 
-***Figuur 2. Principal Component Analysis (PCA) van genexpressiegegevens (RA vs. Normaal).*** *Deze puntenwolk toont de verdeling van de monsters op basis van de eerste twee hoofdcomponenten (PC's). De x-as representeert PC1, die 74% van de totale variantie verklaart, terwijl de y-as PC2 representeert, die verantwoordelijk is voor 10% van de variantie.*
-
-Er is een duidelijke scheiding zichtbaar langs de PC1-as tussen de monsters van de patiënten met Reumatoïde Artritis (RA, paarse stippen) en de gezonde controlegroep (Normal, grijze stippen). De 'Normale' monsters clusteren hoofdzakelijk aan de linkerzijde van de grafiek (negatieve PC1-waarden), terwijl de 'RA' monsters zich aan de rechterzijde bevinden (positieve PC1-waarden). Dit suggereert dat het grootste deel van de variatie in genexpressie tussen deze monsters direct gerelateerd is aan de ziektetoestand.
-
 ---
 
-## Volcano plot
-<img width="945" height="1181" alt="image" src="https://github.com/user-attachments/assets/76c8418a-e346-4dc8-819d-aeb2c038e252" />
+## GO-enrichmentanalyse: oververtegenwoordigde immuun- en signaalprocessen in RA
+GO-enrichmentanalyse werd uitgevoerd om te bepalen welke biologische processen vaker voorkomen in genen die verschillen tussen RA-patiënten en gezonde controles.
 
-***Figuur 3. Volcano plot van differentiële genexpressie tussen RA-patiënten en gezonde controles.*** *Deze grafiek visualiseert de statistische significantie (\(-\log_{10} P\)) uitgezet tegen de mate van verandering in expressie (-log10^2) voor 29.407 variabelen (genen).*
+De analyse laat zien dat vooral immuunprocessen oververtegenwoordigd zijn in RA (Figuur 3C–D). Dit omvat onder andere immune system process en leukocyte activation. Daarnaast komen processen voor signaaltransductie en celcommunicatie vaker voor in genen die verschillen tussen RA en controles.
 
-De paarse punten vertegenwoordigen genen die zowel statistisch significant zijn als een substantiële verandering in expressie laten zien. Punten aan de rechterkant van de centrale nullijn duiden op genen die 'upregulated' zijn bij RA-patiënten (zoals IGHV3-53 en STAT4), terwijl punten aan de linkerkant 'downregulated' genen aangeven (zoals ANKRD30BL en MT-ND6). De horizontale stippellijn markeert de drempelwaarde voor statistische significantie, en de verticale stippellijnen geven de grenzen aan voor de fold change.
+De dot plot bevestigt deze resultaten en laat zien dat deze processen zowel een hoge significantie als een hoge gene ratio hebben. Dit betekent dat veel genen binnen deze processen verschillen in expressie tussen RA en controles (Figuur 3D).
 
----
+<img width="1196" height="624" alt="image" src="https://github.com/user-attachments/assets/eddbd4c7-a3d7-4e07-8482-314254e7f488" />
 
-## GO-analyse: Enrichment
-<img width="945" height="756" alt="image" src="https://github.com/user-attachments/assets/48e7d210-8f49-4fcd-9976-f07777fd8bfe" />
-
-***Figuur 4. Top 10 verrijkte Gene Ontology (GO) termen.*** *De staafdiagram toont de tien meest significante biologische processen en moleculaire functies die geassocieerd zijn met de differentieel tot expressie gebrachte genen, geanalyseerd met goseq. De x-as geeft de negatieve logaritme van de p-waarde weer (\(-\log_{10} P\)), waarbij een langere staaf duidt op een hogere statistische significantie.*
-
-De termen zijn sterk gerelateerd aan het immuunsysteem, met 'immunoglobulin complex' als de meest significante term. Andere prominente categorieën zijn 'immune system process', 'adaptive immune response' en 'leukocyte activation'. Deze resultaten bevestigen dat de geobserveerde genexpressie-verschillen in de RA-patiënten primair gedreven worden door actieve immuunresponsen en ontstekingsprocessen.
-
-
----
-## GO-analyse: Dotplot
-<img width="753" height="603" alt="image" src="https://github.com/user-attachments/assets/ad988223-587d-40de-ab1e-e1a9bba4b330" />
-
-***Figuur 5. Dot plot van de Gene Ontology (GO) Biological Process verrijkingsanalyse.*** *Deze grafiek toont de verrijkte biologische processen op basis van de genexpressiedata. De x-as geeft de 'GeneRatio' weer, wat de verhouding is van genen uit de dataset die betrokken zijn bij een specifieke term ten opzichte van het totaal aantal genen in die term.*
-
-De grootte van de cirkels (Count) representeert het absolute aantal genen dat geassocieerd is met de betreffende GO-term. De kleur van de cirkels geeft de aangepaste p-waarde (p.adjust) aan, waarbij rood staat voor een hogere significantie en blauw voor een lagere significantie binnen deze topselectie. Opvallende processen in deze analyse zijn onder andere 'signal release', 'axonogenesis' en verschillende ontwikkelingsprocessen zoals 'embryonic organ development'.
-
-
+***Figuur 3. Gene Ontology (GO) enrichmentanalyse van differentieel tot expressie gebrachte genen (RA versus gezonde controles).*** 
+***(C)*** *Barplot van de top verrijkte *GO Biological Process*-termen op basis van statistische significantie. De x-as weergeeft de $-\log_{10}(p\text{-waarde})$.*
+***(D)*** *Dot plot van de verrijkte GO-termen. De x-as toont de *GeneRatio* (de verhouding van betrokken genen per term). De grootte van de punten representeert het aantal genen (*Count*) en de kleur geeft de adjusted p-waarde (*p.adjust*) weer. De analyses zijn uitgevoerd met `goseq` en `clusterProfiler` om RA-monsters te vergelijken met gezonde controles.*
 
 ---
 
 ## KEGG Rheumatoid Arthritis pathway (hsa05323)
-<img width="746" height="429" alt="image" src="https://github.com/user-attachments/assets/ae227dcf-2646-4f8c-81fb-0360212fac19" />
-
-***Figuur 6. KEGG-pathway visualisatie van Reumatoïde Artritis.*** *Dit diagram (gegenereerd met Pathview) projecteert de genexpressiegegevens op de officiële KEGG-pathway voor RA. Het brengt de interacties in kaart tussen verschillende celtypen in het synovium, zoals T-cellen, B-cellen, macrofagen en fibroblasten.*
-
-De kleuren van de genen/eiwitten geven de mate van expressie aan: paars duidt op een hogere expressie (upregulated) en roze/rood op een lagere expressie (downregulated) in de RA-groep vergeleken met de controles. De figuur visualiseert hoe deze expressieverschillen bijdragen aan pathologische processen zoals: Leukocyte migration & Inflammation: Door verhoogde expressie van cytokines (zoals IL-6 en IL-15) en chemokines (zoals CCL2 en CXCL1). Joint destruction & Bone resorption: Door de activatie van osteoclasten (o.a. via de RANKL-pathway) en de productie van matrix-afbrekende enzymen (MMP's).
-
-
 
 ---
 
@@ -115,44 +91,26 @@ Bij dit project is gebruikgemaakt van **kunstmatige intelligentie (AI)** ter ond
 
 ---
 
-# Bronnen (nog aanvullen en goed neerzetten)
+# Bronnen
 
-Begovich, A. B., Carlton, V. E., Honigberg, L. A., Schrodi, S. J., Chokkalingam, A. P., Alexander, H. C., ... & Gregersen, P. K. (2004). A missense single-nucleotide polymorphism in a gene encoding a protein tyrosine phosphatase (PTPN22) is associated with rheumatoid arthritis. American Journal of Human Genetics, 75(2), 330–337. doi.org
-
-Jang S, Kwon EJ, Lee JJ. Rheumatoid Arthritis: Pathogenic Roles of Diverse Immune Cells. Int J Mol Sci. 2022 Jan 14;23(2):905. doi: 10.3390/ijms23020905. PMID: 35055087; PMCID: PMC8780115.
-
-Padyukov, L. (2022). Genetics of rheumatoid arthritis. Seminars in Immunopathology, 44(1), 47–62. doi.org
-
-Paroli, M., & Sirinian, M. I. (2023). When Autoantibodies Are Missing: The Challenge of Seronegative Rheumatoid Arthritis. Antibodies, 12(4), 69. doi.org
-
-Platzer, A., Nussbaumer, T., Karonitsch, T., Smolen, J. S., & Aletaha, D. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. PloS one, 14(7), e0219698. https://doi.org/10.1371/journal.pone.0219698
-
-Sahin, D., Di Matteo, A., & Emery, P. (2025). Biomarkers in the diagnosis, prognosis and management of rheumatoid arthritis: A comprehensive review. Annals of clinical biochemistry, 62(1), 3–21. https://doi.org/10.1177/00045632241285843
-
-World Health Organization. (2023, 28 juni). Rheumatoid arthritis. https://www.who.int/news-room/fact-sheets/detail/rheumatoid-arthritis (als artikel nog juist zeten)
-
-Gabriel, S. E. (2001). The epidemiology of rheumatoid arthritis. Rheumatic Disease Clinics of North America, 27(2), 269–281. https://doi.org/10.1016/s0889-857x(05)70201-5
-
-Kanehisa, M., Furumichi, M., Sato, Y., Ishiguro-Watanabe, M., & Tanabe, M. (2023). KEGG: integrating viruses and cellular organisms. Nucleic Acids Research, 51(D1), D587–D592. https://doi.org/10.1093/nar/gkac963
-
-Liu, F., Huang, Y., Liu, F., & Wang, H. (2023). Identification of immune-related genes in diagnosing atherosclerosis with rheumatoid arthritis through bioinformatics analysis and machine learning. Frontiers in Immunology, 14. https://doi.org/10.3389/fimmu.2023.1126647
-
-Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology, 15(12), 550. https://doi.org/10.1186/s13059-014-0550-8
-
-Majithia, V., & Geraci, S. A. (2007). Rheumatoid Arthritis: Diagnosis and Management. The American Journal of Medicine, 120(11), 936–939. https://doi.org/10.1016/j.amjmed.2007.04.005
-
-NCBI. (2026). Homo sapiens genome assembly GRCh38.p14. NCBI. Retrieved from NCBI Dataset
-
-Radu, A.-F., & Bungău, S. G. (2021). Management of Rheumatoid Arthritis: An Overview. Cells, 10(11), 2857. https://doi.org/10.3390/cells10112857
-
-The Gene Ontology Consortium. (2021). The Gene Ontology resource: enriching a GOld mine. Nucleic Acids Research, 49(D1), D325–D334. https://doi.org/10.1093/nar/gkaa1113
-
-Yu, F., Hu, G., Li, L., Yu, B., & Liu, R. (2022). Identification of key candidate genes and biological pathways in the synovial tissue of patients with rheumatoid arthritis. Experimental and Therapeutic Medicine, 23(6). https://doi.org/10.3892/etm.2022.11295
-
-Yu, G., Wang, L.-G., Han, Y., & He, Q.-Y. (2012). clusterProfiler: an R package for comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology, 16(5), 284–287. https://doi.org/10.1089/omi.2011.0118
-
-Zhang, F., Wei, K., Slowikowski, K., Fonseka, C. Y., Rao, D. A., Kelly, S., Goodman, S. M., Tabechian, D., Hughes, L. B., Salomon-Escoto, K., Watts, G. F. M., Jonsson, A. H., Rangel-Moreno, J., Meednu, N., Rozo, C., Apruzzese, W., Eisenhaure, T. M., Lieb, D. J., Boyle, D. L., & Mandelin, A. M. (2019). Defining inflammatory cell states in rheumatoid arthritis joint synovial tissues by integrating single-cell transcriptomics and mass cytometry. Nature Immunology, 20(7), 928–942. https://doi.org/10.1038/s41590-019-0378-1
-
+* Begovich, A. B., Carlton, V. E., Honigberg, L. A., Schrodi, S. J., Chokkalingam, A. P., Alexander, H. C., ... & Gregersen, P. K. (2004). A missense single-nucleotide polymorphism in a gene encoding a protein tyrosine phosphatase (PTPN22) is associated with rheumatoid arthritis. *American Journal of Human Genetics*, 75(2), 330–337. [https://doi.org](https://doi.org)
+* Gabriel, S. E. (2001). The epidemiology of rheumatoid arthritis. *Rheumatic Disease Clinics of North America*, 27(2), 269–281. [https://doi.org](https://doi.org)
+* Jang, S., Kwon, EJ., & Lee, JJ. (2022). Rheumatoid Arthritis: Pathogenic Roles of Diverse Immune Cells. *International Journal of Molecular Sciences*, 23(2), 905. [https://doi.org](https://doi.org)
+* Kanehisa, M., Furumichi, M., Sato, Y., Ishiguro-Watanabe, M., & Tanabe, M. (2023). KEGG: integrating viruses and cellular organisms. *Nucleic Acids Research*, 51(D1), D587–D592. [https://doi.org](https://doi.org)
+* Liu, F., Huang, Y., Liu, F., & Wang, H. (2023). Identification of immune-related genes in diagnosing atherosclerosis with rheumatoid arthritis through bioinformatics analysis and machine learning. *Frontiers in Immunology*, 14. [https://doi.org](https://doi.org)
+* Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biology*, 15(12), 550. [https://doi.org](https://doi.org)
+* Majithia, V., & Geraci, S. A. (2007). Rheumatoid Arthritis: Diagnosis and Management. *The American Journal of Medicine*, 120(11), 936–939. [https://doi.org](https://doi.org)
+* NCBI. (2026). *Homo sapiens genome assembly GRCh38.p14*. NCBI Dataset.
+* Padyukov, L. (2022). Genetics of rheumatoid arthritis. *Seminars in Immunopathology*, 44(1), 47–62. [https://doi.org](https://doi.org)
+* Paroli, M., & Sirinian, M. I. (2023). When Autoantibodies Are Missing: The Challenge of Seronegative Rheumatoid Arthritis. *Antibodies*, 12(4), 69. [https://doi.org](https://doi.org)
+* Platzer, A., Nussbaumer, T., Karonitsch, T., Smolen, J. S., & Aletaha, D. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. *PLoS ONE*, 14(7), e0219698. [https://doi.org](https://doi.org)
+* Radu, A.-F., & Bungău, S. G. (2021). Management of Rheumatoid Arthritis: An Overview. *Cells*, 10(11), 2857. [https://doi.org](https://doi.org)
+* Sahin, D., Di Matteo, A., & Emery, P. (2025). Biomarkers in the diagnosis, prognosis and management of rheumatoid arthritis: A comprehensive review. *Annals of Clinical Biochemistry*, 62(1), 3–21. [https://doi.org](https://doi.org)
+* The Gene Ontology Consortium. (2021). The Gene Ontology resource: enriching a GOld mine. *Nucleic Acids Research*, 49(D1), D325–D334. [https://doi.org](https://doi.org)
+* World Health Organization. (2023, 28 juni). *Rheumatoid arthritis*. [https://who.int](https://who.int)
+* Yu, F., Hu, G., Li, L., Yu, B., & Liu, R. (2022). Identification of key candidate genes and biological pathways in the synovial tissue of patients with rheumatoid arthritis. *Experimental and Therapeutic Medicine*, 23(6), 373. [https://doi.org](https://doi.org)
+* Yu, G., Wang, L.-G., Han, Y., & He, Q.-Y. (2012). clusterProfiler: an R package for comparing biological themes among gene clusters. *OMICS: A Journal of Integrative Biology*, 16(5), 284–287. [https://doi.org](https://doi.org)
+* Zhang, F., Wei, K., Slowikowski, K., Fonseka, C. Y., Rao, D. A., Kelly, S., Goodman, S. M., Tabechian, D., Hughes, L. B., Salomon-Escoto, K., Watts, G. F. M., Jonsson, A. H., Rangel-Moreno, J., Meednu, N., Rozo, C., Apruzzese, W., Eisenhaure, T. M., Lieb, D. J., Boyle, D. L., & Mandelin, A. M. (2019). Defining inflammatory cell states in rheumatoid arthritis joint synovial tissues by integrating single-cell transcriptomics and mass cytometry. *Nature Immunology*, 20(7), 928–942. [https://doi.org](https://doi.org)
 
 ---
 
@@ -161,6 +119,3 @@ NHL Stenden Hogeschool
 Biologie en Medisch Laboratoriumonderzoek
 25-26 J2P4 – Innovatieve Diagnostiek
 Transcriptomics
-
-
-voor het beheren gebruik voorbeelden om je beheren naar voren te laten komen
