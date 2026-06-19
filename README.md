@@ -45,8 +45,8 @@ De biologische betekenis is bepaald met GO-enrichment via goseq (v1.60.0) en clu
 
 ## PCA en volcano plot: duidelijke scheiding en brede genexpressieverschillen tussen RA en controles
 
-Het doel van deze analyses was het bepalen van verschillen in genexpressie tussen RA-patiënten en gezonde controles. De PCA laat een duidelijke scheiding zien tussen beide groepen, waarbij RA en controles apart clusteren (Figuur 2A). Dit geeft aan dat de ziektetoestand de belangrijkste bron van variatie is in de data.
-De volcano plot laat zien dat veel genen significant differentieel tot expressie komen (Figuur 2B). Genen aan de rechterzijde zijn verhoogd in RA, terwijl genen aan de linkerzijde verlaagd zijn. Voorbeelden zijn STAT4 (upregulated) en MT-ND6 (downregulated).
+Het doel van deze analyses was het bepalen van verschillen in genexpressie tussen RA-patiënten en gezonde controles. De PCA laat een duidelijke scheiding zien tussen beide groepen, waarbij RA en controles apart clusteren **(Figuur 2A)**. Dit geeft aan dat de ziektetoestand de belangrijkste bron van variatie is in de data.
+De volcano plot laat zien dat veel genen significant differentieel tot expressie komen **(Figuur 2B)**. Genen aan de rechterzijde zijn verhoogd in RA, terwijl genen aan de linkerzijde verlaagd zijn. Voorbeelden zijn STAT4 (upregulated) en MT-ND6 (downregulated).
 
 <img width="1198" height="626" alt="image" src="https://github.com/user-attachments/assets/e2fae861-bf74-4260-9961-99c172743a9c" />
 
@@ -57,18 +57,18 @@ De volcano plot laat zien dat veel genen significant differentieel tot expressie
 ---
 
 ## GO-enrichmentanalyse: oververtegenwoordigde immuun- en signaalprocessen in RA
-GO-analyse laat zien dat immuunprocessen sterk oververtegenwoordigd zijn in RA ten opzichte van controles (Figuur 3C–D), waaronder immune system process en leukocyte activation. Daarnaast komen signaaltransductie en celcommunicatie vaker voor in de RA-genen. De dot plot bevestigt dit en laat zien dat deze processen zowel een hoge significantie als gene ratio hebben.
+GO-analyse laat zien dat immuunprocessen sterk oververtegenwoordigd zijn in RA ten opzichte van controles **(Figuur 3C–D)**, waaronder immune system process en leukocyte activation. Daarnaast komen signaaltransductie en celcommunicatie vaker voor in de RA-genen. De dot plot bevestigt dit en laat zien dat deze processen zowel een hoge significantie als gene ratio hebben.
 
 <img width="1196" height="624" alt="image" src="https://github.com/user-attachments/assets/eddbd4c7-a3d7-4e07-8482-314254e7f488" />
 
 ***Figuur 3. Gene Ontology (GO) enrichmentanalyse van differentieel tot expressie gebrachte genen (RA versus gezonde controles).*** 
-***(C)*** *Barplot van de top verrijkte *GO Biological Process*-termen op basis van statistische significantie. De x-as weergeeft de $-\log_{10}(p\text{-waarde})$.*
+***(C)*** *Barplot van de top verrijkte GO Biological Process-termen op basis van statistische significantie. De x-as toont de negatieve logaritme van de p-waarde.*
 ***(D)*** *Dot plot van de verrijkte GO-termen. De x-as toont de *GeneRatio* (de verhouding van betrokken genen per term). De grootte van de punten representeert het aantal genen (*Count*) en de kleur geeft de adjusted p-waarde (*p.adjust*) weer. De analyses zijn uitgevoerd met `goseq` en `clusterProfiler` om RA-monsters te vergelijken met gezonde controles.*
 
 ---
 
 # KEGG pathway enrichment: verrijkte immuun- en signaalroutes in RA
-KEGG-analyse toont meerdere verrijkte pathways in de opgereguleerde genen tussen RA-patiënten en controles (Figuur 4). Dit betreft vooral immuun- en signaalgerelateerde routes die significant oververtegenwoordigd zijn in de dataset.
+KEGG-analyse toont meerdere verrijkte pathways in de opgereguleerde genen tussen RA-patiënten en controles **(Figuur 4)**. Dit betreft vooral immuun- en signaalgerelateerde routes die significant oververtegenwoordigd zijn in de dataset.
 
 <img width="3000" height="2400" alt="image" src="https://github.com/user-attachments/assets/c8141e9c-ceaf-4100-9830-a8071e4ea22e" />
 
@@ -77,7 +77,7 @@ KEGG-analyse toont meerdere verrijkte pathways in de opgereguleerde genen tussen
 ---
 
 # Pathview analyse: verstoring van de Rheumatoid arthritis pathway
-De Pathview-analyse van de KEGG rheumatoid arthritis pathway laat zien dat meerdere ontstekingsgerelateerde genen verhoogd tot expressie komen in RA ten opzichte van controles (Figuur 5). Dit wijst op verstoring van immuun- en ontstekingsprocessen binnen deze pathway.
+De Pathview-analyse van de KEGG rheumatoid arthritis pathway laat zien dat meerdere ontstekingsgerelateerde genen verhoogd tot expressie komen in RA ten opzichte van controles **(Figuur 5)**. Dit wijst op verstoring van immuun- en ontstekingsprocessen binnen deze pathway.
 
 <img width="1492" height="859" alt="image" src="https://github.com/user-attachments/assets/506d6725-5945-43a3-a867-beffca704d70" />
 
