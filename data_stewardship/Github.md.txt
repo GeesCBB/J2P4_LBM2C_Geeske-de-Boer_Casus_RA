@@ -1,13 +1,21 @@
 Uitleg over hoe je GitHub hebt gebruikt.
 
-Je voert een project uit waarbij je als data steward projectgegevens beheert. Leg uit hoe je dat hebt gedaan met behulp van GitHub. Maak duidelijk hoe jouw pagina bijdraagt aan reproduceerbaarheid van je data. Kan je bijvoorbeeld alles makkelijk terugvinden? Is het makkelijk te gebruiken als iemand anders dit onderzoek gaat uitvoeren met behulp van jouw GitHub pagina? Hoe heb je gezorgd voor een duidelijke structuur? Hoe heb je gewerkt aan versiebeheer? Dit zijn enkele voorbeeldvragen om een beeld te schetsen.
+Je voert een project uit waarbij je als data steward projectgegevens beheert. Leg uit hoe je dat hebt gedaan met behulp van GitHub. Maak duidelijk hoe jouw pagina bijdraagt aan reproduceerbaarheid van je data. Kan je 
+bijvoorbeeld alles makkelijk terugvinden? Is het makkelijk te gebruiken als iemand anders dit onderzoek gaat uitvoeren met behulp van jouw GitHub pagina? Hoe heb je gezorgd voor een duidelijke structuur? Hoe heb je 
+gewerkt aan versiebeheer? Dit zijn enkele voorbeeldvragen om een beeld te schetsen.
 
 Hoe ik GitHub heb gebruikt in dit project
 
-In dit project is GitHub gebruikt als centrale omgeving voor het organiseren, uitvoeren en documenteren van de volledige transcriptomicsanalyse. De repository bevat alle onderdelen van de workflow, waardoor de analyse reproduceerbaar en gestructureerd is opgezet.
+In dit project is GitHub gebruikt als centrale omgeving voor het organiseren, uitvoeren en documenteren van de volledige transcriptomicsanalyse. De repository bevat alle onderdelen van de workflow, waardoor de analyse 
+reproduceerbaar en gestructureerd is opgezet.
 
-De projectstructuur is verdeeld in duidelijke mappen: Data, Script, Resultaten, Flowschema, Bronnen en SessionInfo(). In de map Data staan de countmatrix en inputbestanden die direct uit de RNA-seq workflow komen. De map Script bevat alle R-scripts waarmee de analyse stap voor stap wordt uitgevoerd, van mapping tot differential expression en functionele analyse. De map Resultaten bevat de gegenereerde figuren en output van de analyses. Het Flowschema geeft visueel weer hoe de pipeline van ruwe data naar eindresultaten loopt, zodat de analyse ook zonder code te volgen is. In SessionInfo() staat de volledige softwareomgeving, zodat exact kan worden nagegaan welke R-versies en packages zijn gebruikt. De map Bronnen bevat literatuur en datasets waarop de analyse is gebaseerd.
+De projectstructuur is verdeeld in duidelijke mappen: Data, Script, Resultaten, Flowschema, Bronnen en SessionInfo(). In de map Data staan de countmatrix en inputbestanden die direct uit de RNA-seq workflow komen. De map 
+Script bevat alle R-scripts waarmee de analyse stap voor stap wordt uitgevoerd, van mapping tot differential expression en functionele analyse. De map Resultaten bevat de gegenereerde figuren en output van de analyses. 
+Het Flowschema geeft visueel weer hoe de pipeline van ruwe data naar eindresultaten loopt, zodat de analyse ook zonder code te volgen is. In SessionInfo() staat de volledige softwareomgeving, zodat exact kan worden 
+nagegaan welke R-versies en packages zijn gebruikt. De map Bronnen bevat literatuur en datasets waarop de analyse is gebaseerd.
 
-Versiebeheer is toegepast via GitHub commits, waardoor elke wijziging in scripts en resultaten wordt opgeslagen met een timestamp en beschrijving. Hierdoor kunnen eerdere versies altijd worden teruggevonden en kan de analyse stap voor stap worden gevolgd.
+Versiebeheer is toegepast via GitHub commits, waardoor elke wijziging in scripts en resultaten wordt opgeslagen met een timestamp en beschrijving. Hierdoor kunnen eerdere versies altijd worden teruggevonden en kan de 
+analyse stap voor stap worden gevolgd.
 
-De structuur maakt het mogelijk om de analyse volledig opnieuw uit te voeren door de scripts in volgorde te runnen. Hierdoor is de workflow reproduceerbaar voor andere onderzoekers. Door het combineren van duidelijke mappen, een flowschema en versiebeheer fungeert de repository als een volledige en navolgbare onderzoeksomgeving.
+De structuur maakt het mogelijk om de analyse volledig opnieuw uit te voeren door de scripts in volgorde te runnen. Hierdoor is de workflow reproduceerbaar voor andere onderzoekers. Door het combineren van duidelijke 
+mappen, een flowschema en versiebeheer fungeert de repository als een volledige en navolgbare onderzoeksomgeving.
