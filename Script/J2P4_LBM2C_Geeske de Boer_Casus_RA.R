@@ -251,7 +251,7 @@ dev.copy(
 )
 dev.off()
 
-# 6.0 ===================================== Go analyse ========================================================================================================
+# 6.0 ===================================== Go-analyse ========================================================================================================
 # 6.1 Library ----
 library(goseq)
 
@@ -297,12 +297,12 @@ names(kegg_input) <- gene_conv$ENTREZID
 go_results <- enrichGO(gene = gene_conv$ENTREZID, OrgDb = org.Hs.eg.db, ont = "BP", readable = TRUE)
 go_bp_simplified <- simplify(go_results)
 
-# 8.0 ===================================== EXPORT VISUALISATIES & RESULTATEN ========================================================================================================
+# 8.0 ===================================== GO-analyse: Enrichment en dotplot ========================================================================================================
 # 8.1 GO_Enrichment_RA.csv opslaan ----
 write.csv(top_enriched, "GO_Enrichment_RA.csv", row.names = FALSE)
 
-# 8.2 GO_plot.png (Barplot van de top resultaten) ----
-png("GO_plot.png", width = 1000, height = 800, res = 120)
+# 8.2 GO_Enrichment.png (Barplot van de top resultaten) ----
+png("GO_Enrichment.png", width = 1000, height = 800, res = 120)
 par(mar=c(5, 20, 4, 2)) 
 top10_go <- head(top_enriched, 10) 
 barplot(-log10(top10_go$over_represented_pvalue), 
@@ -314,34 +314,65 @@ barplot(-log10(top10_go$over_represented_pvalue),
         xlab = "-log10(p-value)")
 dev.off()
 
-# 8.3 KEGG_plot.png ----
+# 8.3 KEGG_plot.png (Dotplot van KEGG resultaten) ----
+kegg_results <- enrichKEGG(
+  gene          = names(kegg_input),   
+  organism      = "hsa",
+  pvalueCutoff  = 0.05                 
+)
+
+# Plot maken en stylen
+kegg_p <- dotplot(kegg_results, showCategory = 5, color = "p.adjust") + 
+  scale_color_viridis_c(option = "D", direction = -1) + 
+  theme_minimal() + 
+  labs(
+    title = "KEGG Pathway Enrichment of Up-Regulated DEGs in Rheumatoid Arthritis", 
+    size  = "Gene count", 
+    x     = "Gene Ratio"
+  ) + 
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 12),
+    axis.text.y = element_text(size = 10)
+  )
+
+# Plot opslaan en tonen
+ggsave("KEGG_plot.png", plot = kegg_p, width = 10, height = 8, dpi = 300)
+print(kegg_p)
+
+# 8.4 KEGG_pathview.png ----
 pathview(
-  gene.data  = kegg_input,
-  pathway.id = "hsa05323",
-  species    = "hsa",
+  gene.data   = kegg_input,
+  pathway.id  = "hsa05323",
+  species     = "hsa",
   
-  low  = expr_colors["down"],
-  mid  = expr_colors["mid"],
-  high = expr_colors["up"],
+  # Koppeling naar jouw variabelen uit stap 0.5 (zonder aanhalingstekens)
+  low         = list(gene = col_down),    # Wordt automatisch "hotpink"
+  mid         = list(gene = col_neutral), # Wordt automatisch "grey90"
+  high        = list(gene = col_up),      # Wordt automatisch "purple"
   
-  limit = list(gene = 2, cpd = 1),
+  limit       = list(gene = 2, cpd = 1),
   kegg.native = TRUE
 )
 
-if (file.exists("KEGG_plot.png")) file.remove("KEGG_plot.png")
-file.rename("hsa05323.pathview.png", "KEGG_plot.png")
+# Bestanden hernoemen zonder overschrijven
+if (file.exists("KEGG_pathview.png")) {
+  file.remove("KEGG_pathview.png")
+}
 
-# 8.4 GO_dotplot_clean.png (De nette Dotplot) ----
+if (file.exists("hsa05323.pathview.png")) {
+  file.rename("hsa05323.pathview.png", "KEGG_pathview.png")
+}
+
+# 8.5 GO_dotplot_clean.png ----
 p <- dotplot(go_bp_simplified, showCategory = 12) + 
   scale_y_discrete(labels = function(x) str_wrap(x, width = 30)) + 
   ggtitle("GO Biological Process Enrichment Analysis") +
   theme_bw() + 
   theme(
-    axis.text.y = element_text(size = 10),      
-    plot.title = element_text(face = "bold"),   
+    axis.text.y      = element_text(size = 10),      
+    plot.title       = element_text(face = "bold"),   
     panel.grid.minor = element_blank()          
   )
 
 ggsave("GO_dotplot_clean.png", plot = p, width = 10, height = 8, dpi = 300)
-
 print(p)
