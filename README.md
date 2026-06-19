@@ -1,17 +1,20 @@
-# Inleiding: Transcriptomicsanalyse van Reumatoïde Artritis (RA)
+# Transcriptomicsanalyse van Reumatoïde Artritis (RA) (beschrijvend makend, met conclusie)
+
+# Introdcutie (diepgang welke pathways zijn al bekend, hoe gaan wij de pathways bekijken geneology dinges, who mag voor data)
+
 Reumatoïde (RA) is een chronische, systematische auto-immuunziekte die voornamelijk gewrichten en omliggend weefsel aantast. In 2019 leefde er wereldbreed 18 miljoen mensen met RA, dit bedraagt ​​ongeveer 1% in de volwassene bevolking. Vrouwen worden vaker getroffen dan mannen, ongveer 70% meer waarvan 55% ouder als 55 is. Patiënten wie leven met RA ervaren een aanzienlijke negatieve impact op hun kwaliteit van leven. Zonder behandeling kan de systemische ontsteking zich via de bloedbaan door het lichaam verspreiden. Dit leidt bij RA tot onomkeerbare gewrichtsschade, de ontwikkeling van extra-articulaire manifestaties, invaliditeit en een verhoogd mortaliteitsrisico (Sahin et al., 2025; World Health Organization, 2023).
 
 Om meer inzicht te krijgen in de onderliggende mechanismen van deze ziekte, is in dit project een transcriptomicsanalyse uitgevoerd met behulp van RNA-seq data. Het hoofddoel van deze analyse is om de verschillen in genexpressie tussen gezonde controlemonsters en RA-monsters nauwkeurig te onderzoeken. Hierbij wordt gebruikgemaakt van een verzameling genexpressie-informatie uit gepubliceerde studies die verschillende klinische condities omvatten, waaronder vroege en gevestigde reumatoïde artritis (Platzer et al., 2019). Door deze data te vergelijken met gezonde controles, worden de specifieke biologische pathways en genen geïdentificeerd die verantwoordelijk zijn voor de pathologische processen en ziektemechanismen bij RA.
 
 ---
 
-# Methode: +- 200 woorden met methode, flowschema. Zie leerdoelen voor minimale inhoud. Scripts, data etc. kunnen in een aparte folder met verwijzing
+# Methode: +- 200 woorden met methode, flowschema. Zie leerdoelen voor minimale inhoud. Scripts, data etc. kunnen in een aparte folder met verwijzing (reproduceerbaarheid vooral naar voren brengen, experimentele relevantie naar voren brengen, verwijs naar het artikel van packages, reference genome naar verwijzen, welke pathway met nummer erbij, begin tot eind goed reproduceerbaar maken, hoe de verkregen data is gegenereerd: kan je zelf beschrijven is wel heel specifiek is dit te vinden als je accesion nummer opzoekt op ncbi database dan krijg je hoe het is verkegen of verwijs naar het artikel, wel accesion vermelden, blackboard heeft dat tabel, dit er ook in verwerken, flow nog duidelijker) kijk naar transcriptomics artikelen. rsub reaad ook versie nummer er achter - statistiek ook in vermelden, waarom worden die genen wel mee genomen en waarom dei andere niet (p-value). packages in verwijzen met (versienummer) erachter.
 
 <img width="945" height="1373" alt="image" src="https://github.com/user-attachments/assets/81ea3605-3667-4866-bc43-eb23049133a4" />
 
 ***Figuur 1. RNA-seq analysepipeline voor vergelijking tussen RA en gezonde controles.*** *De figuur toont de volledige workflow van ruwe RNA-seq data (FASTQ) tot biologische interpretatie. Dit omvat read mapping op het referentiegenoom, BAM-verwerking en genquantificatie (groen), toevoeging van metadata en differentiële expressieanalyse met DESeq2 (oranje), gevolgd door data visualisatie met PCA en volcano plots (rood). Vervolgens worden significante genen functioneel geïnterpreteerd via GO-enrichment (barplot en dotplot) en KEGG pathway-analyse (paars). Het eindresultaat bestaat uit genexpressieresultaten, statistische output en biologische pathway-visualisaties.*
 
-Figuur 1 toont de volledige RNA-seq analyseworkflow voor de vergelijking tussen RA-patiënten en gezonde controles. De gebruikte dataset is afkomstig uit Platzer et al. (2019), waarin genexpressie in reumatoïde artritis en gerelateerde condities werd geanalyseerd. De analyse start met ruwe sequencingdata (FASTQ), een referentiegenoom en een GTF-annotatiebestand. Vervolgens wordt met Rsubread een genome index gebouwd en worden de reads gemapt op het referentiegenoom. De resulterende BAM-bestanden worden gesorteerd en geïndexeerd met Rsamtools om een gestandaardiseerde input voor verdere analyse te verkrijgen. Daarna worden de reads per gen gekwantificeerd met featureCounts, wat resulteert in een count matrix.
+(begin met doelsteling misschien) Figuur 1 toont de volledige RNA-seq analyseworkflow voor de vergelijking tussen RA-patiënten en gezonde controles. De gebruikte dataset is afkomstig uit Platzer et al. (2019), waarin genexpressie in reumatoïde artritis en gerelateerde condities werd geanalyseerd. De analyse start met ruwe sequencingdata (FASTQ), een referentiegenoom en een GTF-annotatiebestand. Vervolgens wordt met Rsubread een genome index gebouwd en worden de reads gemapt op het referentiegenoom. De resulterende BAM-bestanden worden gesorteerd en geïndexeerd met Rsamtools om een gestandaardiseerde input voor verdere analyse te verkrijgen. Daarna worden de reads per gen gekwantificeerd met featureCounts, wat resulteert in een count matrix.
 
 Op basis van deze matrix en metadata (RA versus Normal) wordt met DESeq2 een differentiële expressieanalyse uitgevoerd, waarbij log2 fold changes en statistische significantie worden berekend. De resultaten worden verkend via een PCA-analyse om clustering tussen groepen te visualiseren en via een volcano plot om significante genen te identificeren op basis van fold change, p-waarde en biologisch relevante RA-genen.
 
@@ -19,9 +22,9 @@ De significante genen worden gebruikt voor functionele interpretatie via GO-enri
 
 ---
 
-# Resultaten: +- 200 woorden, inclusief correcte verwijzingen.
+# Resultaten: +- 200 woorden, inclusief correcte verwijzingen. beschrijf wat je afleest van uit figuur niet de details dat staat in het bijschrift. gebruik tussenkopjes, begin met doel, wat voor analyse heb je gedaan wat wil je eruit halen aan informatie beschrijf dan de belangrijkste bevindingen en verwijs naar het figuur, zet gresnwaarde voor volcano in tekst. in bijscrift welke groepen je met elkaar vergelijkt ra vs controle. Teskt boven figuur (bijschrift natuurlijk wel onder en voor een tabel er boven duh).
 
-## PCA
+## PCA + volcano (ze versterken elkaar)
 <img width="945" height="709" alt="image" src="https://github.com/user-attachments/assets/4cb135d2-04d3-4204-9710-f1bafe855329" />
 
 ***Figuur 2. Principal Component Analysis (PCA) van genexpressiegegevens (RA vs. Normaal).*** *Deze puntenwolk toont de verdeling van de monsters op basis van de eerste twee hoofdcomponenten (PC's). De x-as representeert PC1, die 74% van de totale variantie verklaart, terwijl de y-as PC2 representeert, die verantwoordelijk is voor 10% van de variantie.*
@@ -70,7 +73,7 @@ De kleuren van de genen/eiwitten geven de mate van expressie aan: paars duidt op
 
 ---
 
-# Conclusie: +- 200 woorden, inclusief aanbevelingen en onderzoek in context plaatsen (andere genen nog erbij in verwerken)
+# Conclusie: +- 200 woorden, inclusief aanbevelingen en onderzoek in context plaatsen (andere genen nog erbij in verwerken). dit kan bondig als resultaten goed beschreven zijn, wat beketkent de conclusie wat zegt het grotebeeld of ziektebeeld
 
 Dit onderzoek bevestigt dat Reumatoïde Artritis gepaard gaat met een grootschalige herprogrammering van het transcriptoom in het synovium. De belangrijkste bevinding is de sterke activering van het adaptieve immuunsysteem, wat overeenkomt met de aanwezigheid van ACPA-autoantistoffen in de RA-monsters (pp. 1, 12). De resultaten, specifiek de verhoogde expressie van STAT4 en ontstekingscytokines in de KEGG-pathway, sluiten aan bij de literatuur die de rol van chronische synovitis bij gewrichtsschade beschrijft (Radu & Bungau, 2021).
 
@@ -100,7 +103,7 @@ Platzer, A., Nussbaumer, T., Karonitsch, T., Smolen, J. S., & Aletaha, D. (2019)
 
 Sahin, D., Di Matteo, A., & Emery, P. (2025). Biomarkers in the diagnosis, prognosis and management of rheumatoid arthritis: A comprehensive review. Annals of clinical biochemistry, 62(1), 3–21. https://doi.org/10.1177/00045632241285843
 
-World Health Organization. (2023, 28 juni). Rheumatoid arthritis. https://www.who.int/news-room/fact-sheets/detail/rheumatoid-arthritis
+World Health Organization. (2023, 28 juni). Rheumatoid arthritis. https://www.who.int/news-room/fact-sheets/detail/rheumatoid-arthritis (als artikel)
 
 ---
 
@@ -109,3 +112,6 @@ NHL Stenden Hogeschool
 Biologie en Medisch Laboratoriumonderzoek
 25-26 J2P4 – Innovatieve Diagnostiek
 Transcriptomics
+
+
+voor het beheren gebruik voorbeelden om je beheren naar voren te laten komen
