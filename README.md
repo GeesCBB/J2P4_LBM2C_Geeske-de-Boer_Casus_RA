@@ -1,6 +1,6 @@
 # Transcriptomicsanalyse van Reumatoïde Artritis (RA) (beschrijvend makend, met conclusie)
 
-# Introdcutie (diepgang welke pathways zijn al bekend, hoe gaan wij de pathways bekijken geneology dinges, who mag voor data)
+# Introdcutie
 
 Reumatoïde (RA) is een chronische, systematische auto-immuunziekte die voornamelijk gewrichten en omliggend weefsel aantast. In 2019 leefde er wereldbreed 18 miljoen mensen met RA, dit bedraagt ​​ongeveer 1% in de volwassene bevolking. Vrouwen worden vaker getroffen dan mannen, ongveer 70% meer waarvan 55% ouder als 55 is. Patiënten wie leven met RA ervaren een aanzienlijke negatieve impact op hun kwaliteit van leven. Zonder behandeling kan de systemische ontsteking zich via de bloedbaan door het lichaam verspreiden. Dit leidt bij RA tot onomkeerbare gewrichtsschade, de ontwikkeling van extra-articulaire manifestaties, invaliditeit en een verhoogd mortaliteitsrisico (Sahin et al., 2025; World Health Organization, 2023).
 
@@ -8,17 +8,37 @@ Om meer inzicht te krijgen in de onderliggende mechanismen van deze ziekte, is i
 
 ---
 
-# Methode: +- 200 woorden met methode, flowschema. Zie leerdoelen voor minimale inhoud. Scripts, data etc. kunnen in een aparte folder met verwijzing (reproduceerbaarheid vooral naar voren brengen, experimentele relevantie naar voren brengen, verwijs naar het artikel van packages, reference genome naar verwijzen, welke pathway met nummer erbij, begin tot eind goed reproduceerbaar maken, hoe de verkregen data is gegenereerd: kan je zelf beschrijven is wel heel specifiek is dit te vinden als je accesion nummer opzoekt op ncbi database dan krijg je hoe het is verkegen of verwijs naar het artikel, wel accesion vermelden, blackboard heeft dat tabel, dit er ook in verwerken, flow nog duidelijker) kijk naar transcriptomics artikelen. rsub reaad ook versie nummer er achter - statistiek ook in vermelden, waarom worden die genen wel mee genomen en waarom dei andere niet (p-value). packages in verwijzen met (versienummer) erachter.
+# Methoden
 
-<img width="945" height="1373" alt="image" src="https://github.com/user-attachments/assets/81ea3605-3667-4866-bc43-eb23049133a4" />
+## Dataset en monsters
+De in dit project gebruikte RNA-seq data zijn afkomstig uit de studie van Platzer et al. (2019), beschikbaar via de NCBI Sequence Read Archive (SRA), bestaande uit acht synoviumbiopten van reumatoïde artritis (RA) patiënten en gezonde controles (SRR4785819–SRR4785988; tabel 1). De ruwe data (FASTQ) zijn oorspronkelijk gegenereerd na RNA-extractie uit synoviumweefsel, gevolgd door library preparation met TruSeq Stranded Total RNA RiboZero (Illumina) en sequencing op een Illumina HiSeq 2000 (paired-end 100 bp). 
 
-***Figuur 1. RNA-seq analysepipeline voor vergelijking tussen RA en gezonde controles.*** *De figuur toont de volledige workflow van ruwe RNA-seq data (FASTQ) tot biologische interpretatie. Dit omvat read mapping op het referentiegenoom, BAM-verwerking en genquantificatie (groen), toevoeging van metadata en differentiële expressieanalyse met DESeq2 (oranje), gevolgd door data visualisatie met PCA en volcano plots (rood). Vervolgens worden significante genen functioneel geïnterpreteerd via GO-enrichment (barplot en dotplot) en KEGG pathway-analyse (paars). Het eindresultaat bestaat uit genexpressieresultaten, statistische output en biologische pathway-visualisaties.*
+**Tabel 1.** *Overzicht van de gebruikte RNA-seq monsters uit de studie van Platzer et al. (2019).*
 
-(begin met doelsteling misschien) Figuur 1 toont de volledige RNA-seq analyseworkflow voor de vergelijking tussen RA-patiënten en gezonde controles. De gebruikte dataset is afkomstig uit Platzer et al. (2019), waarin genexpressie in reumatoïde artritis en gerelateerde condities werd geanalyseerd. De analyse start met ruwe sequencingdata (FASTQ), een referentiegenoom en een GTF-annotatiebestand. Vervolgens wordt met Rsubread een genome index gebouwd en worden de reads gemapt op het referentiegenoom. De resulterende BAM-bestanden worden gesorteerd en geïndexeerd met Rsamtools om een gestandaardiseerde input voor verdere analyse te verkrijgen. Daarna worden de reads per gen gekwantificeerd met featureCounts, wat resulteert in een count matrix.
+| Accessionnummer | Leeftijd | Gender | Groep |
+| :--- | :--- | :--- | :--- |
+| SRR4785819 | 31 | Vrouw | Normaal |
+| SRR4785820 | 15 | Vrouw | Normaal |
+| SRR4785828 | 31 | Vrouw | Normaal |
+| SRR4785831 | 42 | Vrouw | Normaal |
+| SRR4785979 | 54 | Vrouw | Reumatoïde artritis (vastgesteld) |
+| SRR4785980 | 66 | Vrouw | Reumatoïde artritis (vastgesteld) |
+| SRR4785986 | 60 | Vrouw | Reumatoïde artritis (vastgesteld) |
+| SRR4785988 | 59 | Vrouw | Reumatoïde artritis (vastgesteld) |
 
-Op basis van deze matrix en metadata (RA versus Normal) wordt met DESeq2 een differentiële expressieanalyse uitgevoerd, waarbij log2 fold changes en statistische significantie worden berekend. De resultaten worden verkend via een PCA-analyse om clustering tussen groepen te visualiseren en via een volcano plot om significante genen te identificeren op basis van fold change, p-waarde en biologisch relevante RA-genen.
+## Gen-mapping en kwantificatie
+Alle analyses volgden de workflow in R (**Figuur 1**). Reads werden gemapt tegen het humane referentiegenoom GRCh38.p14 (NCBI, 2026). Hiervoor werd een genoomindex gebouwd met `buildindex()` en uitgelijnd met `align()` via `Rsubread` (v2.22.1). Na sortering met `Rsamtools` (v2.24.0) telde `featureCounts()` de reads per gen tot een countmatrix.
 
-De significante genen worden gebruikt voor functionele interpretatie via GO-enrichmentanalyse (goseq/clusterProfiler) en KEGG-pathwayanalyse (pathview), wat inzicht geeft in verrijkte biologische processen en signaalroutes.
+## Differentiële expressieanalye sen visualisatie
+Expressieverschillen tussen RA en controle werden berekend met `DESeq2` (v1.48.1). Genen waren significant bij een adjusted p-waarde < 0,05 en |log2FoldChange| > 1. Dit filter garandeert statistische en biologische relevantie. De data werden gevisualiseerd in een PCA-plot (`ggplot2` v4.0.2) en volcano plot (`EnhancedVolcano` v1.26.0) (**Figuur 1**).
+
+
+<img width="2286" height="3851" alt="image" src="https://github.com/user-attachments/assets/05dc722c-f9a8-45c7-9ee2-1a1263f31fbb" />
+
+***Figuur 1. Workflow voor de RNA-seq data-analyse bij reumatoïde artritis (RA). Deze afbeelding toont de stappen van ruwe data naar de resultaten.*** *In het midden staan de processtappen (rechthoeken). De workflow begint met het voorbereiden van de data. Daarna worden de reads gemapt op het referentiegenoom en geteld tot een countmatrix (bovenste blokken). Vervolgens wordt de metadata toegevoegd en start de differentiële expressieanalyse met DESeq2 (middelste blokken). De resultaten worden daarna gevisualiseerd met een PCA-plot en volcano plot (linksonder). Tot slot worden de belangrijkste genen functioneel geïnterpreteerd met een GO-enrichment en een KEGG pathway-analyse (rechtsonder). De invoerbestanden staan links en de gemaakte tussenbestanden staan rechts (parallellogrammen). Het eindresultaat bestaat uit de grafieken en pathway-visualisaties onderaan.*
+
+## Functionele interpretatie en software
+De biologische betekenis werd bepaald met GO-enrichment via `goseq` (v1.60.0) en `clusterProfiler` (v4.16.0) (**Figuur 1**). Daarnaast toonde `pathview` (v1.48.0) de genexpressie in de relevante KEGG-pathway hsa05323 (Rheumatoid arthritis). Alle overige softwaregegevens staan in `sessionInfo()` in de bijlage voor de reproduceerbaarheid.
 
 ---
 
@@ -103,7 +123,30 @@ Platzer, A., Nussbaumer, T., Karonitsch, T., Smolen, J. S., & Aletaha, D. (2019)
 
 Sahin, D., Di Matteo, A., & Emery, P. (2025). Biomarkers in the diagnosis, prognosis and management of rheumatoid arthritis: A comprehensive review. Annals of clinical biochemistry, 62(1), 3–21. https://doi.org/10.1177/00045632241285843
 
-World Health Organization. (2023, 28 juni). Rheumatoid arthritis. https://www.who.int/news-room/fact-sheets/detail/rheumatoid-arthritis (als artikel)
+World Health Organization. (2023, 28 juni). Rheumatoid arthritis. https://www.who.int/news-room/fact-sheets/detail/rheumatoid-arthritis (als artikel nog juist zeten)
+
+Gabriel, S. E. (2001). The epidemiology of rheumatoid arthritis. Rheumatic Disease Clinics of North America, 27(2), 269–281. https://doi.org/10.1016/s0889-857x(05)70201-5
+
+Kanehisa, M., Furumichi, M., Sato, Y., Ishiguro-Watanabe, M., & Tanabe, M. (2023). KEGG: integrating viruses and cellular organisms. Nucleic Acids Research, 51(D1), D587–D592. https://doi.org/10.1093/nar/gkac963
+
+Liu, F., Huang, Y., Liu, F., & Wang, H. (2023). Identification of immune-related genes in diagnosing atherosclerosis with rheumatoid arthritis through bioinformatics analysis and machine learning. Frontiers in Immunology, 14. https://doi.org/10.3389/fimmu.2023.1126647
+
+Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology, 15(12), 550. https://doi.org/10.1186/s13059-014-0550-8
+
+Majithia, V., & Geraci, S. A. (2007). Rheumatoid Arthritis: Diagnosis and Management. The American Journal of Medicine, 120(11), 936–939. https://doi.org/10.1016/j.amjmed.2007.04.005
+
+NCBI. (2026). Homo sapiens genome assembly GRCh38.p14. NCBI. Retrieved from NCBI Dataset
+
+Radu, A.-F., & Bungău, S. G. (2021). Management of Rheumatoid Arthritis: An Overview. Cells, 10(11), 2857. https://doi.org/10.3390/cells10112857
+
+The Gene Ontology Consortium. (2021). The Gene Ontology resource: enriching a GOld mine. Nucleic Acids Research, 49(D1), D325–D334. https://doi.org/10.1093/nar/gkaa1113
+
+Yu, F., Hu, G., Li, L., Yu, B., & Liu, R. (2022). Identification of key candidate genes and biological pathways in the synovial tissue of patients with rheumatoid arthritis. Experimental and Therapeutic Medicine, 23(6). https://doi.org/10.3892/etm.2022.11295
+
+Yu, G., Wang, L.-G., Han, Y., & He, Q.-Y. (2012). clusterProfiler: an R package for comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology, 16(5), 284–287. https://doi.org/10.1089/omi.2011.0118
+
+Zhang, F., Wei, K., Slowikowski, K., Fonseka, C. Y., Rao, D. A., Kelly, S., Goodman, S. M., Tabechian, D., Hughes, L. B., Salomon-Escoto, K., Watts, G. F. M., Jonsson, A. H., Rangel-Moreno, J., Meednu, N., Rozo, C., Apruzzese, W., Eisenhaure, T. M., Lieb, D. J., Boyle, D. L., & Mandelin, A. M. (2019). Defining inflammatory cell states in rheumatoid arthritis joint synovial tissues by integrating single-cell transcriptomics and mass cytometry. Nature Immunology, 20(7), 928–942. https://doi.org/10.1038/s41590-019-0378-1
+
 
 ---
 
